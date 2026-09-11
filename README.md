@@ -1,6 +1,6 @@
-# 
+# Python Basics
 
-
+A complete beginner-to-solid-fundamentals path through Python — syntax, data structures, functions, files, and OOP essentials.
 
 Part of the [Yaaddi](https://github.com/yaaddi-courses) course catalog — a
 spaced-repetition flashcard course, ready to build and validate with the
