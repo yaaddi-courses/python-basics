@@ -5,17 +5,14 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 4,1,multiple_choice,exercise,1,Which of these is Python's floating-point number type?,int|float|str|bool,1,,,"float represents numbers with a decimal point, like 3.14."
 5,1,multiple_choice,exercise,1,What is the type of True?,int|str|bool|float,2,,,True and False are the two values of the bool type.
 6,1,multiple_choice,exercise,1,Which assignment sets x to 5?,x=5|x==5|5=x|int x=5,0,,,A single = assigns a value to a name — no declaration keyword needed.
-7,1,multiple_choice,exercise,1,"What does this print?
-x = 5
-x = 'five'
-print(type(x))",<class 'str'>|<class 'int'>|str|five,0,cards/card_7.png,,Reassigning x to a string changes its type — the same variable can hold any type at different times.
+7,1,multiple_choice,exercise,1,What does this print?,<class 'str'>|<class 'int'>|str|five,0,cards/card_7.png,,Changing x to text changes its data type — the same variable can hold any type at different times.
 8,2,multiple_choice,main,,Which operator performs floor (integer) division in Python?,//|/|%|**,0,,,"// divides and rounds down to the nearest whole number, discarding any remainder. Related operators: % (modulo) gives the remainder instead, ** raises to a power, == checks equality (returning True/False, even comparing an int to an equal float), and and/or combine boolean conditions — and needs both sides true, or needs just one. The ** operator raises a number to a power."
 9,2,command_output,exercise,8,What does this print?,print(7 // 2)|3,,,,"7 divided by 2 is 3.5, and // rounds that down to 3."
 10,2,multiple_choice,exercise,8,"What does this print?
 print(7 % 2)",1|0|3.5|2,0,,,% gives the remainder after division — 7 divided by 2 leaves a remainder of 1.
 11,2,true_false,exercise,8,"In Python, == compares values while = assigns a value.",,true,,,"Mixing these up is one of the most common beginner typos — = sets a value, == checks equality."
 12,2,multiple_choice,exercise,8,Which operator raises a number to a power?,^|**|pow|%%,1,cards/card_12.png,,"** is Python's exponentiation operator — 2 ** 3 is 8. ^ is actually bitwise XOR in Python, not power."
-13,2,select_blank,exercise,8,if a ___ b: needs both truthy.,and|or|not|is,0,,,and requires both sides to be truthy for the whole condition to be true.
+13,2,select_blank,exercise,8,"If A ___ B, both must be True.",and|or|not|is,0,,,'and' requires both sides to evaluate as True for the whole condition to be true.
 14,2,true_false,exercise,8,"This prints True:
 print(3 == 3.0)",,true,,,"Python compares numeric values, not types — an int and a float with the same value are equal."
 15,3,select_blank,main,,"f'Hello, ___!' embeds the name variable in an f-string.",{name}|(name)|[name]|<name>,0,,,"An f-string lets you drop a variable straight into a string using curly braces. Strings are also indexable (s[0], s[-1]) and sliceable (s[1:4]), and come with methods like lower() (lowercase copy), split() (break into a list), and strip() (trim whitespace)."
@@ -25,10 +22,8 @@ print(s[0])",,true,,,"String indexing starts at 0, so s[0] is the first characte
 17,3,multiple_choice,exercise,15,"What does this print?
 s = 'Python'
 print(s[-1])",n|P|-1|Python,0,cards/card_17.png,,Negative indices count from the end — -1 is always the last character.
-18,3,multiple_choice,exercise,15,"What does this print?
-s = 'Python'
-print(s[1:4])",yth|Pyt|ytho|Python,0,,,Slicing s[1:4] takes characters from index 1 up to (not including) index 4.
-19,3,multiple_choice,exercise,15,Which string method converts a string to all lowercase?,lower()|toLowerCase()|downcase()|casefold_all(),0,,,"s.lower() returns a new lowercase copy — the original string is unchanged, since strings are immutable."
+18,3,multiple_choice,exercise,15,What does this print?,yth|Pyt|ytho|Python,0,,,"The notation s[1:4] extracts characters starting at index 1, up to (but not including) index 4."
+19,3,multiple_choice,exercise,15,What function makes text lowercase?,lower()|toLowerCase()|downcase()|casefold_all(),0,,,It returns a new lowercase copy; the original text cannot be changed.
 20,3,multiple_choice,exercise,15,"What does this print?
 s = 'a,b,c'
 print(s.split(','))","['a','b','c']|('a','b','c')|'a,b,c'|{'a','b','c'}",0,,,split() breaks a string into a list wherever the separator appears.
@@ -60,7 +55,7 @@ for i in range(3):print(i)
 else:print('done')","0,1,2,done|0,1,2|done|Error",0,,,A for loop's else block runs automatically once the loop finishes normally (no break).
 35,5,true_false,exercise,29,break skips a for loop's else block.,,true,,,The else only runs when the loop completes all its iterations — break skips it entirely.
 36,6,select_blank,main,,Lists are ___ — you can change them.,mutable|immutable|constant|frozen,0,,,"You can add, remove, or change items in a list without creating a new one — unlike a tuple or string. That mutation happens through methods like append() (add to end), sort() (rearrange in place), and pop() (remove and return the last item), plus len() to count items and slicing (nums[1:]) to grab a range."
-37,6,multiple_choice,exercise,36,Which method adds one item to a list's end?,append()|add()|push()|insert(),0,,,"append() adds exactly one item to the end — for adding several items at once, extend() is what you want instead."
+37,6,multiple_choice,exercise,36,Which function adds one item to list end?,append()|add()|push()|insert(),0,,,"append() adds exactly one item to the end — for adding several items at once, extend() is what you want instead."
 38,6,multiple_choice,exercise,36,"What does this print?
 nums = [3, 1, 2]
 nums.sort()
@@ -95,7 +90,7 @@ print(a | b)","{1,2,3}|{2}|{1,3}|{1,2,2,3}",0,,,"The union keeps every element f
 51,8,multiple_choice,exercise,50,"What does this print?
 d = {'a': 1, 'b': 2}
 print(d['a'])",1|2|'a'|KeyError,0,,,Square brackets look up a value by its key.
-52,8,multiple_choice,exercise,50,Which dict method avoids a KeyError?,get()|fetch()|find()|lookup(),0,,,"d.get('key', default) is a safe lookup — it never raises an error for a missing key."
+52,8,multiple_choice,exercise,50,Which dictionary function avoids error?,get()|fetch()|find()|lookup(),0,,,"d.get('key', default) is a safe lookup — it never raises an error for a missing key."
 53,8,multiple_choice,exercise,50,"What does this print?
 d = {'a': 1}
 print(d.get('b', 0))",0|None|KeyError|1,0,,,"'b' isn't in the dict, so get() falls back to the default value provided: 0."
@@ -169,7 +164,7 @@ print(math.floor(3.7))",3|4|3.7|Error,0,,,math.floor() rounds down to the neares
 87,13,multiple_choice,exercise,84,What variable equals '__main__' when run directly?,__name__|__main__|__file__|__module__,0,cards/card_87.png,,__name__ is '__main__' only when the file is run directly — it's the module's own name when it's imported elsewhere.
 88,13,true_false,exercise,84,A module only runs once; later imports reuse it.,,true,,,"Python caches imported modules, so importing the same one twice doesn't re-run its top-level code."
 89,13,select_blank,exercise,84,if __name__==___:main() is the direct-run guard.,'__main__'|__main__|'main'|'__init__',0,,,This guard is standard practice — it stops your script's main logic from running when the file is only imported.
-90,14,multiple_choice,main,,Which function reads a typed line from the user?,input()|read()|scan()|get_input(),0,,,"input() pauses the program, waits for the user to type something and press Enter, then returns it as a string. int(input()) or float(input()) converts that text to a number — though text that isn't a valid number, like '3.5' passed to int(), raises a ValueError, which except ValueError: can catch. The IndexError exception is raised when accessing an invalid index in a sequence."
+90,14,multiple_choice,main,,Which function reads a typed line from the user?,input()|read()|scan()|get_input(),0,,,"input() pauses the program, waits for user input, and returns it as text. Converting this text (e.g., using int()) might fail if the text isn't a valid number; this failure can be handled with 'except ValueError:'. A similar error occurs when accessing an invalid index in a sequence."
 91,14,true_false,exercise,90,input() always returns a string.,,true,,,Whatever the user types comes back as text — you need int() or float() to use it as a number.
 92,14,select_blank,exercise,90,age=___(input()) converts the typed input to an integer.,int|str|float|num,0,,,Wrapping input() in int() converts the typed text straight into a whole number.
 93,14,command_output,exercise,90,What does this print?,print(int('42') + 1)|43,,,,"int('42') converts the string to the number 42, which can then be added to 1."
@@ -199,13 +194,10 @@ else:print('b')","b|a|a,b|Nothing",0,,,"No exception was raised, so the else blo
 111,17,code_fill,main,,Complete the class definition for a class named Dog.,"___ Dog:
     pass|class",,,,"class starts every class definition, followed by its name. Calling Dog() creates a new instance; methods are called on that instance (d.bark()), with self referring to it automatically, and each instance keeps its own independent attributes."
 112,17,select_blank,exercise,111,An instance method's first parameter is named ___.,self|this|instance,0,,,self is just a convention (not a keyword) — Python automatically passes the instance as the first argument.
-113,17,multiple_choice,exercise,111,"What prints?
-class Dog:
- def bark(s):return 'Woof'
-print(Dog().bark())",Woof|bark|None|Error,0,,,Calling d.bark() runs the method with self automatically set to d.
+113,17,multiple_choice,exercise,111,What prints?,Woof|bark|None|Error,0,,,Calling an instance function automatically sets the first argument (self) to the object.
 114,17,true_false,exercise,111,Calling Dog() creates a new Dog instance.,,true,,,Calling a class like a function is how you create a new instance of it.
-115,17,select_blank,exercise,111,d.___() calls bark() on the instance d.,bark|bark(self)|self.bark|Dog.bark,0,,,"You call an instance method on the object itself, without passing self manually."
-116,17,true_false,exercise,111,One instance's attribute doesn't affect other instances.,,true,,,"Each instance has its own independent set of attributes, separate from every other instance."
+115,17,select_blank,exercise,111,"To call bark() using object d, write ___.",bark|bark(self)|self.bark|Dog.bark,0,,,"You call an instance function on the object itself, without passing self manually."
+116,17,true_false,exercise,111,Object data doesn't affect others?,,true,,,"Each object has its own independent data, separate from others."
 117,18,short_answer,main,,"Name Python's constructor, run when an instance is made.",__init__|__init__(),,,,"__init__ runs automatically right after a new instance is created, typically to set up its initial attributes via self.attr = value. A class attribute lives on the class itself, so every instance sees the same value — until one instance is given its own, which only overrides it for that one instance."
 118,18,select_blank,exercise,117,self.name=___ stores name as an instance attribute.,name|self.name|Name|'name',0,,,Assigning to self.name stores the value on this specific instance.
 119,18,multiple_choice,exercise,117,"What does this print?
