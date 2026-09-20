@@ -36,10 +36,10 @@ TypeError,"The specific exception Python raises when an operation is given a val
 KeyError,"The specific exception Python raises when you look up a dictionary key that isn't there, e.g. d['missing'] on a dict without that key — d.get('missing') sidesteps it by returning a default value instead of erroring.",,50
 IndexError,"The specific exception Python raises when you access a list, tuple, or string position that doesn't exist, e.g. [1, 2, 3][5] fails because a 3-item list only has positions 0 through 2.",,90
 File I/O,"Reading data from a file on disk, or writing data to one — the ""I/O"" stands for input/output.",,104
-Class,"A blueprint for creating objects that share the same attributes and behavior — you define it once with class, then create as many individual instances of it as you need.",,111
+Class,"A blueprint for creating objects that share the same attributes and behavior — you define it once with class, then create as many individual instances of it as you need.",,7
 Instance,"One specific object built from a class — calling Dog('Rex') creates an instance whose own name is 'Rex', kept completely separate from any other Dog instance you create afterward.",,111
 Attribute,"A piece of data stored on an object, accessed with a dot, like dog.name or dog.age — a method is really just an attribute that happens to be a function instead of a plain value.",,117
-Method,"A function defined inside a class that acts on one specific instance, called with a dot like d.bark() — Python automatically passes that instance in as the method's first parameter, self.",,202
+Method,"A function defined inside a class that acts on one specific instance, called with a dot like d.bark() — Python automatically passes that instance in as the method's first parameter, self.",,112
 Self,"The name — by convention, not a required keyword — given to an instance method's first parameter, which Python automatically fills in with the specific instance the method was called on.",,111
 Constructor,"A special method — __init__ in Python — that runs automatically right after a new instance of a class is created, typically used to set up that instance's starting attributes.",,117
 Inheritance,"A mechanism where one class (a subclass) is defined in terms of another (its parent class), automatically getting all of that parent's attributes and methods without having to rewrite them.",https://docs.python.org/3/tutorial/classes.html#inheritance,123
