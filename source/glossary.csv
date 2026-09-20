@@ -4,7 +4,7 @@ Modulo,"The % operator: divides two numbers and gives you the remainder instead 
 Exponentiation,"The ** operator: raises a number to a power — 2 ** 3 means 2 multiplied by itself 3 times, giving 8.",,8
 String,"A sequence of characters used to represent text, like 'hello' — written between quotes, and immutable once created.",https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str,15
 F-string,"A string written with an f right before the opening quote that lets you drop a variable's value straight into the text using curly braces, like f'Hello, {name}!', instead of gluing pieces together manually.",https://docs.python.org/3/reference/lexical_analysis.html#f-strings,15
-Indexing,"Grabbing a single character or item out of a string or list by its position, counting from 0 — s[0] is the first item, and s[-1] is the last.",,
+Indexing,"Grabbing a single character or item out of a string or list by its position, counting from 0 — s[0] is the first item, and s[-1] is the last.",,15
 Slicing,"Pulling out a range of characters or items with s[start:end] — it grabs everything from start up to, but not including, end.",,36
 Boolean,A value that is either True or False — Python's way of representing a yes/no answer.,,8
 Truthy,"A value that counts as True when used in a condition, even though it isn't literally the word True — any non-empty string, non-zero number, or non-empty collection is truthy.",,22
@@ -16,7 +16,7 @@ List,"An ordered, mutable collection of items written in square brackets, like [
 Mutable,"Able to be changed in place after creation, without making a new object — lists and dictionaries are mutable.",,36
 Immutable,"Locked once created — its contents can never change afterward, only be replaced entirely with a new object. Strings, tuples, and numbers are all immutable.",,36
 Tuple,"An ordered, immutable collection of items written in parentheses, like (1, 2) — once created, its contents can never change.",,36
-Unpacking,"Assigning each item of a tuple (or list) to its own variable in one line, in order — x, y = (1, 2) gives x the value 1 and y the value 2.",,
+Unpacking,"Assigning each item of a tuple (or list) to its own variable in one line, in order — x, y = (1, 2) gives x the value 1 and y the value 2.",,43
 Set,"An unordered collection that automatically drops duplicate values — adding the same item twice only keeps one copy, so {1, 1, 2} becomes {1, 2}.",,46
 Dictionary,"A collection that maps keys to values, written as key: value pairs inside curly braces — you look up a value by its key instead of by position.",https://docs.python.org/3/tutorial/datastructures.html#dictionaries,50
 Hashable,"Able to be used as a dictionary key (or set element) because its value can never change — numbers, strings, and tuples are hashable, but lists aren't, since they're mutable.",,50
@@ -26,13 +26,13 @@ Function,"A reusable, named block of code that can take inputs (parameters) and 
 Positional argument,"A value passed into a function call that gets matched to a parameter by its order, rather than by name — the first value fills the first parameter, and so on.",,71
 Lambda,"A small, unnamed, single-expression function, written as lambda x: x*2 — handy for short, throwaway logic that doesn't need a full def and a name.",,72
 Scope,The region of code where a particular variable name is actually visible and usable — a variable created inside a function generally isn't reachable outside it.,,77
-LEGB rule,"The order Python searches for a variable's name when it's used: Local scope first, then Enclosing, then Global (module-level), then Built-in — stopping at the first match it finds.",,
+LEGB rule,"The order Python searches for a variable's name when it's used: Local scope first, then Enclosing, then Global (module-level), then Built-in — stopping at the first match it finds.",,77
 Module,"A single file of Python code that can be imported and reused elsewhere with import, instead of copy-pasting its contents wherever you need them.",,77
 Type conversion,"Converting a value from one data type to another, like turning the text '42' into the number 42 with int('42') — necessary because input() always hands back text, even when the user typed digits.",,90
 Exception,"An error that occurs while a program is running, like dividing by zero, which — unlike a typo that stops the program from even starting — can be caught and handled with try/except instead of crashing the whole thing.",,97
 ZeroDivisionError,"The specific exception Python raises when a number is divided by zero, e.g. 1 / 0 or 5 // 0 — division by zero is mathematically undefined, so Python refuses instead of guessing an answer.",,97
 ValueError,"The specific exception Python raises when a value has the right type but isn't valid for what you're asking it to do, e.g. int('abc') fails because the text 'abc' can't be parsed as a number, even though a string is normally a fine argument for int().",,90
-TypeError,"The specific exception Python raises when an operation is given a value of the wrong type entirely, e.g. 'a' + 5 fails because you can't add a string and a number together, no matter what either one contains.",,
+TypeError,"The specific exception Python raises when an operation is given a value of the wrong type entirely, e.g. 'a' + 5 fails because you can't add a string and a number together, no matter what either one contains.",,43
 KeyError,"The specific exception Python raises when you look up a dictionary key that isn't there, e.g. d['missing'] on a dict without that key — d.get('missing') sidesteps it by returning a default value instead of erroring.",,50
 IndexError,"The specific exception Python raises when you access a list, tuple, or string position that doesn't exist, e.g. [1, 2, 3][5] fails because a 3-item list only has positions 0 through 2.",,90
 File I/O,"Reading data from a file on disk, or writing data to one — the ""I/O"" stands for input/output.",,104
@@ -53,6 +53,6 @@ Sort key,"A function passed to sorted() (via key=) that Python runs on each item
 Virtual environment,"An isolated Python setup with its own separately installed packages, kept apart from your system-wide Python and from other projects' environments, so different projects can depend on different package versions without conflicting.",https://docs.python.org/3/tutorial/venv.html,149
 pip,"Python's standard command-line tool for installing third-party packages from the Python Package Index, e.g. pip install requests.",https://pip.pypa.io/en/stable/,151
 requirements.txt,"A plain text file that conventionally lists a project's dependencies, one package per line, so anyone can recreate the exact same set of installed packages with pip install -r requirements.txt.",,151
-Type hint,"An optional annotation on a function or variable that documents the type of value it expects or returns, like age: int or -> str — Python doesn't enforce it at runtime, but tools like mypy and most editors use it to catch mistakes.",https://docs.python.org/3/library/typing.html,
-Docstring,"A string written as the very first line inside a function, class, or module's body that documents what it does — readable later via help() or an editor's tooltip.",https://docs.python.org/3/glossary.html#term-docstring,
+Type hint,"An optional annotation on a function or variable that documents the type of value it expects or returns, like age: int or -> str — Python doesn't enforce it at runtime, but tools like mypy and most editors use it to catch mistakes.",https://docs.python.org/3/library/typing.html,155
+Docstring,"A string written as the very first line inside a function, class, or module's body that documents what it does — readable later via help() or an editor's tooltip.",https://docs.python.org/3/glossary.html#term-docstring,158
 PEP 8,"Python's official, community-standard style guide covering naming, spacing, and formatting conventions — most Python code out in the wild follows it.",https://peps.python.org/pep-0008/,158

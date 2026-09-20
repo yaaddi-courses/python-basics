@@ -76,7 +76,7 @@ print(len(nums))",4|3|5|Error,0,,,len() counts how many items are in the list.
 nums = [1, 2, 3]
 print(nums[1:])","[2,3]|[1,2]|[1,2,3]|[3]",0,,,"Leaving off the end of a slice means ""go all the way to the end""."
 42,6,select_blank,exercise,36,items.___('x') adds 'x' to the end of the list.,append|add|push|insert,0,,,append() is the standard way to grow a list one item at a time.
-43,7,select_blank,main,,Tuples are ___ — their contents can't change.,immutable|mutable|dynamic|editable,0,,,"Tuples are written with parentheses, e.g. (1, 2), and are useful exactly because they can't be accidentally modified."
+43,7,select_blank,main,,Tuples are ___ — their contents can't change.,immutable|mutable|dynamic|editable,0,,,"Tuples are written with parentheses, e.g. (1, 2), and are useful exactly because they can't be accidentally modified. It also allows assigning multiple values from a sequence to multiple variables in one line."
 44,7,select_blank,exercise,43,"x,y=___ unpacks a tuple into x and y.","(1,2)|[1,2]|{1,2}|1,2,3",0,cards/card_44.png,,"Unpacking assigns each element of a tuple to a variable in order — x gets 1, y gets 2."
 45,7,multiple_choice,exercise,46,"What does this print?
 s = {1, 2, 2, 3}
@@ -273,7 +273,7 @@ print(sorted(w,key=len))","['a','bb','ccc']|['ccc','bb','a']|['a','ccc','bb']|['
 155,24,select_blank,main,,def greet(age:int)->___: means greet returns a string.,str|int|None|Any,0,,,"The -> arrow annotates a function's return type, after the parameter annotations."
 156,24,true_false,exercise,155,Type hints aren't enforced by Python at runtime.,,true,,,"Nothing stops you from passing the wrong type at runtime — hints are checked by tools like mypy, not by Python itself."
 157,24,select_blank,exercise,155,scores:list[___]=[] types a list of integers.,int|str|list|Integer,0,,,list[int] documents that every item in the list is expected to be an int.
-158,24,select_blank,main,,Python's official style guide is called ___.,PEP 8|PEP 20|Black,0,,,PEP 8 is the community-standard style guide most Python code follows.
+158,24,select_blank,main,,Python's official style guide is called ___.,PEP 8|PEP 20|Black,0,,,"PEP 8 is the community-standard style guide most Python code follows. A docstring is a string placed at the beginning of a function, class, or module to document its purpose."
 159,24,true_false,exercise,158,"A docstring documents a function, class, or module.",,true,,,"Docstrings are readable via help() and by most editors' tooltips, making them the standard way to document code."
 160,24,select_blank,exercise,155,"count:___[int]=None types an int, or None.",Optional|Maybe|Nullable|Union,0,cards/card_160.png,,"Optional[int] is shorthand for ""either an int, or None""."
 161,1,media_card,exercise,1,Listen: What is a variable in Python?,"A name that refers to a stored value, which can change over the program's lifetime|A fixed value that never changes|A type of loop|A function's return value",0,,variable.wav,"Pronunciation and definition check for ""variable""."
