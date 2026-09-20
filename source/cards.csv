@@ -212,7 +212,7 @@ print(Dog().bark())",Woof|bark|None|Error,0,,,Calling d.bark() runs the method w
 class Dog:
  def __init__(s,n):s.name=n
 print(Dog('Rex').name)",Rex|name|None|Error,0,,,'Rex' was passed into __init__ and stored as d.name.
-120,18,true_false,exercise,117,A class attribute is shared unless overridden per-instance.,,true,,,"Class attributes live on the class itself, so every instance sees the same value until one of them sets its own."
+120,18,true_false,exercise,117,A class attribute is shared unless overridden per-instance.,,true,,,"This is correct because class attributes belong to the entire class definition, meaning all instances share that single value until one instance explicitly changes it."
 121,18,multiple_choice,exercise,117,"What does this print?
 class C:
     count = 0
@@ -292,11 +292,11 @@ print(sorted(w,key=len))","['a','bb','ccc']|['ccc','bb','a']|['a','ccc','bb']|['
 174,14,media_card,exercise,90,Listen: What is type conversion?,Comparing two values for equality|Repeating a block of code|Defining a new class|Converting a value from one data type to another,3,,typeconversion.wav,"Pronunciation and definition check for ""type conversion""."
 175,15,media_card,exercise,97,Listen: What is an exception in Python?,"A type of loop|A stored variable|An error that occurs during a program's execution, which can be caught and handled|A comment in the code",2,,exception.wav,"Pronunciation and definition check for ""exception""."
 176,16,media_card,exercise,104,Listen: What does file I/O mean?,Defining a class|Reading data from or writing data to a file|Sending data over a network|Converting a string to a number,1,,fileio.wav,"Pronunciation and definition check for ""file I/O""."
-177,17,media_card,exercise,111,Listen: What is a class in Python?,A blueprint for creating objects that share attributes and behavior|A single stored value|A type of loop|A built-in function,0,,class.wav,"Pronunciation and definition check for ""class""."
+177,17,media_card,exercise,111,Listen: What is a class in Python?,A blueprint for creating objects that share attributes and behavior|A single stored value|A type of loop|A built-in function,0,,class.wav,Think of a class as a template or blueprint; it defines what kind of object will be created (like a car) without being the actual object itself.
 178,18,media_card,exercise,117,Listen: What is a constructor?,A method that deletes an object|A type of loop|A module-level function|A special method that runs automatically to set up a new object,3,,constructor.wav,"Pronunciation and definition check for ""constructor""."
 179,19,media_card,exercise,123,Listen: What is inheritance?,Converting between data types|Catching an exception|A mechanism where one class reuses and extends another class's behavior|Copying a variable's value,2,,inheritance.wav,"Pronunciation and definition check for ""inheritance""."
 180,20,media_card,exercise,129,Listen: What is encapsulation?,"Sorting a list|Bundling data and the methods that operate on it inside a class, hiding internal details|Splitting a program into separate files|Repeating a block of code",1,,encapsulation.wav,"Pronunciation and definition check for ""encapsulation""."
-181,21,media_card,exercise,135,Listen: What is a higher-order function?,A function that takes another function as an argument or returns one|A function with no parameters|A function that can only return numbers|A function defined inside a loop,0,,higherorderfunction.wav,"Pronunciation and definition check for ""higher-order function""."
+181,21,media_card,exercise,135,Listen: What is a higher-order function?,A function that takes another function as an argument or returns one|A function with no parameters|A function that can only return numbers|A function defined inside a loop,0,,higherorderfunction.wav,A higher-order function is any function that treats other functions as values—meaning it either accepts a function as an argument or returns a function itself.
 182,22,media_card,exercise,142,Listen: What does a sort key do?,The first item in a sorted list|A boolean flag for ascending order|A unique identifier for a dictionary|A function applied to each item to decide the sort order,3,,sortkey.wav,"Pronunciation and definition check for ""sort key""."
 183,23,media_card,exercise,149,Listen: What is a virtual environment?,A sandboxed version of the operating system|A type of virtual machine for graphics|An isolated Python environment with its own installed packages|A cloud server that runs Python,2,,virtualenvironment.wav,"Pronunciation and definition check for ""virtual environment""."
 184,24,media_card,exercise,155,Listen: What is a type hint?,A default value for a parameter|An optional annotation documenting a variable or function's expected type|A runtime type check that stops the program|A comment explaining what a function does,1,,typehint.wav,"Pronunciation and definition check for ""type hint""."
@@ -311,25 +311,25 @@ print(sorted(w,key=len))","['a','bb','ccc']|['ccc','bb','a']|['a','ccc','bb']|['
 193,9,select_blank,preview,57,squares=[n ___ for n in nums] is a comprehension.,** 2|* 2|+ 2|^ 2,0,cards/card_193.png,,
 194,10,select_blank,preview,64,___ greet(name): defines the function greet.,def|function|func|define,0,cards/card_194.png,,
 195,11,select_blank,preview,71,def total(___args): gathers extra positional args.,*|**|...|&,0,cards/card_195.png,,
-196,12,multiple_choice,preview,77,"State the scope order: Local, Enclosing, Global, Built-in.",LEGB|GEBL|BLEG|LGEB,0,cards/card_196.png,,
-197,13,select_blank,preview,84,___ math import sqrt pulls sqrt from math.,from|import|using|with,0,cards/card_197.png,,
-198,14,multiple_choice,preview,90,Which function reads a line from the user?,input()|read()|scan()|get_input(),0,cards/card_198.png,,
-199,15,true_false,preview,97,A try block always comes before except.,,true,cards/card_199.png,,
-200,16,select_blank,preview,104,___ open('data.txt') as f: is the safe pattern.,with|using|open|try,0,cards/card_200.png,,
-201,17,select_blank,preview,111,___ Dog: defines the class Dog.,class|def|struct|type,0,cards/card_201.png,,
-202,18,select_blank,preview,117,def ___(self): is Python's constructor method.,__init__|__new__|__start__|__create__,0,cards/card_202.png,,
-203,19,select_blank,preview,123,class Cat(___): has Cat inherit from Animal.,Animal|Cat|object|super,0,cards/card_203.png,,
-204,20,multiple_choice,preview,129,Which prefix marks a non-public attribute?,_name|$name|ALL_CAPS|name_,0,cards/card_204.png,,
-205,21,select_blank,preview,135,"list(___(f,nums)) runs a function on every item.",map|filter|apply|reduce,0,cards/card_205.png,,
+196,12,multiple_choice,preview,77,"State the scope order: Local, Enclosing, Global, Built-in.",LEGB|GEBL|BLEG|LGEB,0,cards/card_196.png,,"Python searches for names in the specific order of Local, then Enclosing (for nested functions), then Global, and finally Built-in scope."
+197,13,select_blank,preview,84,___ math import sqrt pulls sqrt from math.,from|import|using|with,0,cards/card_197.png,,You must use `from` to specify that you are pulling a particular item (like `sqrt`) directly out of another module (`math`).
+198,14,multiple_choice,preview,90,Which function reads a line from the user?,input()|read()|scan()|get_input(),0,cards/card_198.png,,The built-in `input()` function is the standard way in Python to pause execution and read a line of text entered by the user from the console.
+199,15,true_false,preview,97,A try block always comes before except.,,true,cards/card_199.png,,This is true; the code that might fail must be placed inside the `try` block so that the `except` block can catch any resulting error.
+200,16,select_blank,preview,104,___ open('data.txt') as f: is the safe pattern.,with|using|open|try,0,cards/card_200.png,,"You must use the `with` statement because it creates a context manager that guarantees the file is properly closed automatically, even if an error occurs."
+201,17,select_blank,preview,111,___ Dog: defines the class Dog.,class|def|struct|type,0,cards/card_201.png,,"You must use the keyword `class` to tell Python that you are defining a new blueprint for an object, like Dog. The other keywords serve different purposes entirely."
+202,18,select_blank,preview,117,def ___(self): is Python's constructor method.,__init__|__new__|__start__|__create__,0,cards/card_202.png,,The `__init__` method is Python's constructor; it runs automatically right after an object is created and is used to set up its initial attributes.
+203,19,select_blank,preview,123,class Cat(___): has Cat inherit from Animal.,Animal|Cat|object|super,0,cards/card_203.png,,"When you want to make a class inherit features from another, you list the parent class name inside the parentheses after your own class name."
+204,20,multiple_choice,preview,129,Which prefix marks a non-public attribute?,_name|$name|ALL_CAPS|name_,0,cards/card_204.png,,"In Python, prefixing an attribute with a single underscore (like _name) is the convention used to signal that it should be treated as protected or non-public by other developers."
+205,21,select_blank,preview,135,"list(___(f,nums)) runs a function on every item.",map|filter|apply|reduce,0,cards/card_205.png,,The map() function applies the given function to every single item in an iterable and collects all the results into a new sequence.
 206,22,select_blank,preview,142,___() makes a copy; list.sort() sorts in place.,sorted|reversed|sort|len,0,cards/card_206.png,,
-207,23,select_blank,preview,149,python -m ___ myenv creates an isolated virtual environment.,venv|pip|env|virtual,0,cards/card_207.png,,
-208,24,select_blank,preview,155,def greet(age:int)->___: shows the function's return type.,str|int|None|Any,0,cards/card_208.png,,
+207,23,select_blank,preview,149,python -m ___ myenv creates an isolated virtual environment.,venv|pip|env|virtual,0,cards/card_207.png,,"The module used to create virtual environments in Python is 'venv', so the command must be python -m venv myenv."
+208,24,select_blank,preview,155,def greet(age:int)->___: shows the function's return type.,str|int|None|Any,0,cards/card_208.png,,"The arrow syntax (->) is used for type hinting to specify what a function is expected to return, so 'str' indicates the return type."
 209,7,true_false,exercise,43,You can change a tuple's item after creation.,,false,,,Tuples can't be modified after creation -- trying to reassign an item raises a TypeError.
 210,7,select_blank,preview,46,Python's ___ type removes duplicate values automatically.,set|list|tuple|dict,0,cards/card_210.png,,
-300,11,select_blank,preview,72,def show(___kwargs): gathers extra keyword args.,**|*|...|&&,0,,,
-301,20,multiple_choice,preview,132,Which decorator reads a method like an attribute?,@property|@staticmethod|@classmethod|@getter,0,cards/card_301.png,,
-302,23,true_false,preview,151,pip installs third-party Python packages.,,true,cards/card_302.png,,
-303,24,select_blank,preview,158,Python's official style guide is named ___.,PEP 8|PEP 20|Black,0,,,
+300,11,select_blank,preview,72,def show(___kwargs): gathers extra keyword args.,**|*|...|&&,0,,,The double asterisk (**kwargs) is used to gather any extra keyword arguments passed to a function and collect them into a dictionary.
+301,20,multiple_choice,preview,132,Which decorator reads a method like an attribute?,@property|@staticmethod|@classmethod|@getter,0,cards/card_301.png,,"The @property decorator allows you to access methods using dot notation, making them behave like simple attributes while still retaining method logic for controlled reading and writing."
+302,23,true_false,preview,151,pip installs third-party Python packages.,,true,cards/card_302.png,,"Pip's primary function is managing and installing external libraries, which are known as third-party packages in the Python ecosystem."
+303,24,select_blank,preview,158,Python's official style guide is named ___.,PEP 8|PEP 20|Black,0,,,PEP 8 is the widely accepted standard style guide that dictates how Python code should be formatted and written.
 304,11,multiple_choice,exercise,72,"What does this print?
 def f(**kw):return len(kw)
 print(f(a=1,b=2))",2|1|0|Error,0,,,"kwargs collected 2 keyword arguments, a and b."
