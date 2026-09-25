@@ -23,3 +23,4 @@ id,title,description,min_level,section,image,section_image
 22,Sorting & Custom Keys,"sort() vs. sorted(), the reverse flag, and the key= parameter.",1,Functional & Built-in Utilities,deck6.2.jpg,
 23,Virtual Environments & Package Management,"venv, pip, and requirements.txt.",1,Modern Fundamentals & Code Quality,deck7.1.jpg,deck7.1.jpg
 24,Type Hints & Code Style,"Type annotations, PEP 8, and docstrings.",1,Modern Fundamentals & Code Quality,deck7.2.jpg,
+25,Recap: Key Terms,Quick matching practice that revisits the key terms from earlier decks.,1,Review,unit25.png,

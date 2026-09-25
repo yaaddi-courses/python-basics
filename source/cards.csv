@@ -70,7 +70,7 @@ print(`len(nums)`)",4|3|5|Error,0,,,`len()` counts how many items are in the lis
 41,6,multiple_choice,exercise,36,"What does this print?
 `nums = [1, 2, 3]`
 `print(nums[1:])`","[2,3]|[1,2]|[1,2,3]|[3]",0,,,"Leaving off the end of a slice means ""go all the way to the end""."
-42,6,select_blank,exercise,36,items.___('x') adds 'x' to the end of the list.,`append`|`add`|`push`|`insert`,0,,,`append()` is the standard way to grow a list one item at a time.
+42,6,multiple_choice,exercise,36,What does `nums.append(4)` return?,None|4|[4]|True,0,,,`append` changes the list in place and returns `None`.
 43,7,select_blank,main,,Tuples are ___ — their contents can't change.,immutable|mutable|dynamic|editable,0,,,"Tuples are written with parentheses, e.g. (1, 2), and are useful exactly because they can't be accidentally modified. It also allows assigning multiple values from a sequence to multiple variables in one line."
 44,7,select_blank,exercise,43,"x,y=___ unpacks a tuple into x and y.","(1,2)|[1,2]|{1,2}|1,2,3",0,cards/card_44.png,,"Unpacking assigns each element of a tuple to a variable in order — x gets 1, y gets 2."
 45,7,multiple_choice,exercise,46,"What does this print?
@@ -121,8 +121,8 @@ print(`add(2,3)`)",5|23|None|Error,0,,,"The function returns a + b, which is pas
 print(`greet()`)","Hi, World|Hi, name|Hi,|Error",0,,,"name has a default value of 'World', used automatically when no argument is passed."
 67,10,true_false,exercise,64,A function with no explicit return statement returns None.,,true,,,"If a function never hits a return, Python implicitly returns None."
 68,10,multiple_choice,exercise,64,"What does this print?
-`def add(a,b=10):return a+b`
-print(`add(5)`)",15|5|10|Error,0,,,"Only a is provided, so b falls back to its default value of 10."
+`def area(w,h=2):return w*h`
+print(`area(3)`)",6|5|3|Error,0,,,"`h` defaults to 2, so `area(3)` is 3 * 2 = 6."
 69,10,select_blank,exercise,64,"add(2, ___=3) passes b by keyword.",`b`|`a`|`kwarg`|`key`,0,,,Writing the parameter name before = passes that argument by keyword instead of position.
 70,10,true_false,exercise,64,Positional args must come before keyword args.,,true,,,"Once you switch to keyword arguments in a call, every argument after it must also be keyword-based."
 71,11,select_blank,main,,def total(___args): collects extra positional arguments.,*|**|...|&,0,,,"*args collects any number of extra positional arguments into a tuple named args. Returning several values separated by commas — return a, b — packs them into a tuple the same way, which you can unpack straight into two variables."
@@ -196,7 +196,7 @@ print(`float('3.5')` + 1)",4.5|3.5|'3.5'+1|Error,0,,,`float('3.5')` converts the
 112,17,select_blank,exercise,111,An instance method's first parameter is named ___.,self|this|instance,0,,,self is just a convention (not a keyword) — Python automatically passes the instance as the first argument.
 113,17,multiple_choice,exercise,111,What prints?,Woof|bark|None|Error,0,,,Calling an instance function automatically sets the first argument (self) to the object.
 114,17,true_false,exercise,111,Calling `Dog()` creates a new Dog instance.,,true,,,Calling a class like a function is how you create a new instance of it.
-115,17,select_blank,exercise,111,"To call bark() using object d, write ___.",bark|bark(self)|self.bark|Dog.bark,0,,,"You call an instance function on the object itself, without passing self manually."
+115,17,select_blank,exercise,111,"To call bark() using object d, write ___.",bark|`bark(self)`|self.bark|Dog.bark,0,,,"You call an instance function on the object itself, without passing self manually."
 116,17,true_false,exercise,111,Object data doesn't affect others?,,true,,,"Each object has its own independent data, separate from others."
 117,18,short_answer,main,,"Name Python's constructor, run when an instance is made.",__init__|__init__(),,,,"__init__ runs automatically right after a new instance is created, typically to set up its initial attributes via self.attr = value. A class attribute lives on the class itself, so every instance sees the same value — until one instance is given its own, which only overrides it for that one instance."
 118,18,select_blank,exercise,117,self.name=___ stores name as an instance attribute.,name|self.name|Name|'name',0,,,Assigning to self.name stores the value on this specific instance.
@@ -214,11 +214,11 @@ print(`Dog('Rex')`.name)",Rex|name|None|Error,0,,,'Rex' was passed into __init__
 a.count = 5
 `print(b.count)`",0|5|Error|None,0,cards/card_121.png,,Setting a.count = 5 creates a new instance attribute on a alone — it doesn't touch the shared class attribute b still sees.
 122,18,true_false,exercise,117,Instance attributes are usually set inside __init__.,,true,,,"This is the standard, expected place to initialize an instance's own data."
-123,19,select_blank,main,,class Cat(___): makes Cat inherit from Animal.,Animal|Cat|object|super,0,,,Putting the parent class name in parentheses makes Cat inherit all of Animal's attributes and methods. Cat can override any of them by redefining a method with the same name — and super().method() still reaches Animal's original version from inside that override. Different subclasses answering the same method call differently is polymorphism.
+123,19,select_blank,main,,class Cat(___): makes Cat inherit from Animal.,Animal|Cat|object|super,0,,,Putting the parent class name in parentheses makes Cat inherit all of Animal's attributes and methods. Cat can override any of them by redefining a method with the same name — and `super().method()` still reaches Animal's original version from inside that override. Different subclasses answering the same method call differently is polymorphism.
 124,19,short_answer,exercise,123,Which function calls a parent class's method?,super()|super,,,,"`super()` gives you access to the parent class's version of a method, even after you've overridden it."
 125,19,true_false,exercise,123,A subclass instance uses its own override.,,true,,,"Dog overrides `speak()`, so calling it on a Dog instance uses Dog's version, not Animal's."
 126,19,true_false,exercise,123,Overriding means a subclass redefines a parent method.,,true,,,The subclass's version replaces the parent's when called on an instance of the subclass.
-127,19,true_false,exercise,123,`super()` calls the parent's version of a method.,,true,cards/card_127.png,,"super().speak() calls Animal's original version first, then Dog's override adds ' -> Woof' to it."
+127,19,true_false,exercise,123,`super()` calls the parent's version of a method.,,true,cards/card_127.png,,"`super().speak()` calls Animal's original version first, then Dog's override adds ' -> Woof' to it."
 128,19,true_false,exercise,123,Polymorphism lets classes answer one call differently.,,true,,,"Calling `.speak()` works the same way regardless of the exact class, but each class can answer differently."
 129,20,multiple_choice,main,,Which prefix marks an attribute as non-public by convention?,_name|$name|ALL_CAPS|name_,0,,,"A single leading underscore is a hint to other developers: ""treat this as internal,"" nothing more — nothing stops code outside the class from actually accessing it. A double leading underscore goes a step further, triggering name mangling that makes the attribute harder to reach by accident."
 130,20,true_false,exercise,129,"A single underscore is convention, not enforced privacy.",,true,,,"Nothing stops code outside the class from accessing a _underscored attribute — it's a social contract, not a lock."
@@ -256,11 +256,11 @@ print(`sorted([3,1,2],reverse=True)`)","[3,2,1]|[1,2,3]|[3,1,2]|None",0,,,revers
 print(`sorted(w,key=len)`)","['a','bb','ccc']|['ccc','bb','a']|['a','ccc','bb']|['bb','a','ccc']",0,,,"Each word is sorted by the result of `len(word)`, not alphabetically."
 147,22,true_false,exercise,142,key= is a function applied per item to sort.,,true,,,"`sorted()` calls that function once per item and sorts by the returned values, not the raw items."
 148,22,multiple_choice,exercise,142,"Which module has itemgetter, an alternative sort key?",operator|functools|itertools|collections,0,,,operator.itemgetter and operator.attrgetter are often faster and more readable than an equivalent lambda.
-149,23,short_answer,main,,Which built-in Python module creates an isolated virtual environment?,venv,,,,python -m venv myenv creates a self-contained environment with its own package installs.
+149,23,short_answer,main,,Which built-in Python module creates an isolated virtual environment?,venv,,,,`python -m venv myenv` creates a self-contained environment with its own package installs.
 150,23,true_false,exercise,149,A venv isolates a project's packages from others.,,true,,,This means two projects can depend on different versions of the same package without conflicting.
 151,23,short_answer,main,,Which command-line tool is used to install Python packages?,pip,,,,`pip install` <package> is how you add third-party packages to your environment. It is used to list all necessary external packages for a project.
 152,23,multiple_choice,exercise,151,What file conventionally lists a project's dependencies?,`requirements.txt`|`dependencies.txt`|`packages.json`|`pipfile.txt`,0,,,Sharing this file lets anyone recreate the exact same set of installed packages.
-153,23,select_blank,exercise,151,pip install -r ___ installs packages from requirements.txt.,requirements.txt|packages.txt|-e .|setup.py,0,,,`-r` tells pip to read package names from a file instead of the command line.
+153,23,select_blank,exercise,151,pip install -r ___ installs packages from requirements.txt.,`requirements.txt`|`packages.txt`|`-e` .|`setup.py`,0,,,`-r` tells pip to read package names from a file instead of the command line.
 154,23,true_false,exercise,149,"Without a venv, pip installs affect your whole system.",,true,,,This is exactly the problem virtual environments solve — keeping each project's dependencies separate.
 155,24,select_blank,main,,def greet(age:int)->___: means greet returns a string.,str|int|None|Any,0,,,"The -> arrow annotates a function's return type, after the parameter annotations."
 156,24,true_false,exercise,155,Type hints aren't enforced by Python at runtime.,,true,,,"Nothing stops you from passing the wrong type at runtime — hints are checked by tools like mypy, not by Python itself."
@@ -292,36 +292,36 @@ print(`sorted(w,key=len)`)","['a','bb','ccc']|['ccc','bb','a']|['a','ccc','bb']|
 182,22,media_card,exercise,142,Listen: What does a sort key do?,The first item in a sorted list|A boolean flag for ascending order|A unique identifier for a dictionary|A function applied to each item to decide the sort order,3,,sortkey.wav,"Pronunciation and definition check for ""sort key""."
 183,23,media_card,exercise,149,Listen: What is a virtual environment?,A sandboxed version of the operating system|A type of virtual machine for graphics|An isolated Python environment with its own installed packages|A cloud server that runs Python,2,,virtualenvironment.wav,"Pronunciation and definition check for ""virtual environment""."
 184,24,media_card,exercise,155,Listen: What is a type hint?,A default value for a parameter|An optional annotation documenting a variable or function's expected type|A runtime type check that stops the program|A comment explaining what a function does,1,,typehint.wav,"Pronunciation and definition check for ""type hint""."
-185,1,select_blank,preview,1,___('hi') shows text on the screen.,`print`|`input`|`write`|`return`,0,cards/card_185.png,,
-186,2,multiple_choice,preview,8,Which operator floor-divides in Python?,//|/|%|**,0,,,
-187,3,select_blank,preview,15,"f'Hello, ___!' is how f-strings embed a variable.",{name}|(name)|[name]|<name>,0,cards/card_187.png,,
-188,4,select_blank,preview,22,Complete: a conditional chain always starts with ___.,if|elif|else,0,cards/card_188.png,,
-189,5,select_blank,preview,29,for i in ___(5): counts 0 through 4.,`range`|`len`|`iter`|`enumerate`,0,cards/card_189.png,,
-190,6,select_blank,preview,36,A list is ___ — you can change it.,mutable|immutable|constant|frozen,0,cards/card_190.png,,
-191,7,select_blank,preview,43,A tuple is ___ — its contents can't change.,immutable|mutable|dynamic|editable,0,,,
-192,8,select_blank,preview,50,person={'name':___} is a dict with key 'name'.,'Ada'|Ada|['Ada']|{'Ada'},0,cards/card_192.png,,
-193,9,select_blank,preview,57,squares=[n ___ for n in nums] is a comprehension.,** 2|* 2|+ 2|^ 2,0,cards/card_193.png,,
-194,10,select_blank,preview,64,___ greet(name): defines the function greet.,def|function|func|define,0,cards/card_194.png,,
-195,11,select_blank,preview,71,def total(___args): gathers extra positional args.,*|**|...|&,0,cards/card_195.png,,
-196,12,multiple_choice,preview,77,"State the scope order: Local, Enclosing, Global, Built-in.",LEGB|GEBL|BLEG|LGEB,0,cards/card_196.png,,"Python searches for names in the specific order of Local, then Enclosing (for nested functions), then Global, and finally Built-in scope."
-197,13,select_blank,preview,84,___ math import sqrt pulls sqrt from math.,from|import|using|with,0,cards/card_197.png,,You must use `from` to specify that you are pulling a particular item (like `sqrt`) directly out of another module (`math`).
-198,14,multiple_choice,preview,90,Which function reads a line from the user?,`input()`|`read()`|`scan()`|`get_input()`,0,cards/card_198.png,,The built-in `input()` function is the standard way in Python to pause execution and read a line of text entered by the user from the console.
+185,1,true_false,preview,1,`print`('hi') shows text on the screen.,,true,cards/card_185.png,,
+186,2,true_false,preview,8,The `//` operator floor-divides in Python.,,true,,,
+187,3,true_false,preview,15,"F'Hello, {name}!' is how f-strings embed a variable.",,true,cards/card_187.png,,
+188,4,true_false,preview,22,A conditional chain always starts with if.,,true,cards/card_188.png,,
+189,5,true_false,preview,29,For i in `range`(5): counts 0 through 4.,,true,cards/card_189.png,,
+190,6,true_false,preview,36,A list is mutable — you can change it.,,true,cards/card_190.png,,
+191,7,true_false,preview,43,A tuple is immutable — its contents can't change.,,true,,,
+192,8,true_false,preview,50,Person={'name':'Ada'} is a dict with key 'name'.,,true,cards/card_192.png,,
+193,9,true_false,preview,57,`squares=[n ** 2 for n in nums]` is a comprehension.,,true,cards/card_193.png,,
+194,10,true_false,preview,64,`def greet(name):` defines the function greet.,,true,cards/card_194.png,,
+195,11,true_false,preview,71,`def total(*args):` gathers extra positional args.,,true,cards/card_195.png,,
+196,12,true_false,preview,77,Python searches scopes in LEGB order.,,true,cards/card_196.png,,"Python searches for names in the specific order of Local, then Enclosing (for nested functions), then Global, and finally Built-in scope."
+197,13,true_false,preview,84,From math import sqrt pulls sqrt from math.,,true,cards/card_197.png,,You must use `from` to specify that you are pulling a particular item (like `sqrt`) directly out of another module (`math`).
+198,14,true_false,preview,90,`input()` reads a line from the user.,,true,cards/card_198.png,,The built-in `input()` function is the standard way in Python to pause execution and read a line of text entered by the user from the console.
 199,15,true_false,preview,97,A try block always comes before except.,,true,cards/card_199.png,,This is true; the code that might fail must be placed inside the `try` block so that the `except` block can catch any resulting error.
-200,16,select_blank,preview,104,___ open('data.txt') as f: is the safe pattern.,with|using|open|try,0,cards/card_200.png,,"You must use the `with` statement because it creates a context manager that guarantees the file is properly closed automatically, even if an error occurs."
-201,17,select_blank,preview,111,___ Dog: defines the class Dog.,class|def|struct|type,0,cards/card_201.png,,"You must use the keyword `class` to tell Python that you are defining a new blueprint for an object, like Dog. The other keywords serve different purposes entirely."
-202,18,select_blank,preview,117,def ___(self): is Python's constructor method.,`__init__`|`__new__`|`__start__`|`__create__`,0,cards/card_202.png,,The `__init__` method is Python's constructor; it runs automatically right after an object is created and is used to set up its initial attributes.
-203,19,select_blank,preview,123,class Cat(___): has Cat inherit from Animal.,Animal|Cat|object|super,0,cards/card_203.png,,"When you want to make a class inherit features from another, you list the parent class name inside the parentheses after your own class name."
-204,20,multiple_choice,preview,129,Which prefix marks a non-public attribute?,_name|$name|ALL_CAPS|name_,0,cards/card_204.png,,"In Python, prefixing an attribute with a single underscore (like _name) is the convention used to signal that it should be treated as protected or non-public by other developers."
-205,21,select_blank,preview,135,"list(___(f,nums)) runs a function on every item.",`map`|`filter`|`apply`|`reduce`,0,cards/card_205.png,,The `map()` function applies the given function to every single item in an iterable and collects all the results into a new sequence.
-206,22,select_blank,preview,142,___() makes a copy; list.sort() sorts in place.,`sorted`|`reversed`|`sort`|`len`,0,cards/card_206.png,,
-207,23,select_blank,preview,149,python -m ___ myenv creates an isolated virtual environment.,venv|pip|env|virtual,0,cards/card_207.png,,"The module used to create virtual environments in Python is 'venv', so the command must be python -m venv myenv."
-208,24,select_blank,preview,155,def greet(age:int)->___: shows the function's return type.,str|int|None|Any,0,cards/card_208.png,,"The arrow syntax (->) is used for type hinting to specify what a function is expected to return, so 'str' indicates the return type."
+200,16,true_false,preview,104,`with open('data.txt') as f:` is the safe pattern.,,true,cards/card_200.png,,"You must use the `with` statement because it creates a context manager that guarantees the file is properly closed automatically, even if an error occurs."
+201,17,true_false,preview,111,Class Dog: defines the class Dog.,,true,cards/card_201.png,,"You must use the keyword `class` to tell Python that you are defining a new blueprint for an object, like Dog. The other keywords serve different purposes entirely."
+202,18,true_false,preview,117,Def `__init__`(self): is Python's constructor method.,,true,cards/card_202.png,,The `__init__` method is Python's constructor; it runs automatically right after an object is created and is used to set up its initial attributes.
+203,19,true_false,preview,123,`class Cat(Animal):` makes Cat inherit from Animal.,,true,cards/card_203.png,,"When you want to make a class inherit features from another, you list the parent class name inside the parentheses after your own class name."
+204,20,true_false,preview,129,A `_name` prefix marks a non-public attribute.,,true,cards/card_204.png,,"In Python, prefixing an attribute with a single underscore (like _name) is the convention used to signal that it should be treated as protected or non-public by other developers."
+205,21,true_false,preview,135,"List(`map`(f,nums)) runs a function on every item.",,true,cards/card_205.png,,The `map()` function applies the given function to every single item in an iterable and collects all the results into a new sequence.
+206,22,true_false,preview,142,`sorted()` copies; `list.sort()` sorts in place.,,true,cards/card_206.png,,
+207,23,true_false,preview,149,`python -m venv myenv` creates an isolated environment.,,true,cards/card_207.png,,"The module used to create virtual environments in Python is 'venv', so the command must be `python -m venv myenv`."
+208,24,true_false,preview,155,`def greet(age:int)->str:` shows the return type.,,true,cards/card_208.png,,"The arrow syntax (->) is used for type hinting to specify what a function is expected to return, so 'str' indicates the return type."
 209,7,true_false,exercise,43,You can change a tuple's item after creation.,,false,,,Tuples can't be modified after creation -- trying to reassign an item raises a TypeError.
-210,7,select_blank,preview,46,Python's ___ type removes duplicate values automatically.,set|list|tuple|dict,0,cards/card_210.png,,
-300,11,select_blank,preview,72,def show(___kwargs): gathers extra keyword args.,**|*|...|&&,0,,,The double asterisk (**kwargs) is used to gather any extra keyword arguments passed to a function and collect them into a dictionary.
-301,20,multiple_choice,preview,132,Which decorator reads a method like an attribute?,@property|@staticmethod|@classmethod|@getter,0,cards/card_301.png,,"The @property decorator allows you to access methods using dot notation, making them behave like simple attributes while still retaining method logic for controlled reading and writing."
+210,7,true_false,preview,46,Python's set type removes duplicate values automatically.,,true,cards/card_210.png,,
+300,11,true_false,preview,72,`def show(**kwargs):` gathers extra keyword args.,,true,,,The double asterisk (**kwargs) is used to gather any extra keyword arguments passed to a function and collect them into a dictionary.
+301,20,true_false,preview,132,`@property` reads a method like an attribute.,,true,cards/card_301.png,,"The @property decorator allows you to access methods using dot notation, making them behave like simple attributes while still retaining method logic for controlled reading and writing."
 302,23,true_false,preview,151,pip installs third-party Python packages.,,true,cards/card_302.png,,"Pip's primary function is managing and installing external libraries, which are known as third-party packages in the Python ecosystem."
-303,24,select_blank,preview,158,Python's official style guide is named ___.,PEP 8|PEP 20|Black,0,,,PEP 8 is the widely accepted standard style guide that dictates how Python code should be formatted and written.
+303,24,true_false,preview,158,Python's official style guide is named PEP 8.,,true,,,PEP 8 is the widely accepted standard style guide that dictates how Python code should be formatted and written.
 304,11,multiple_choice,exercise,72,"What does this print?
 `def f(**kw):return len(kw)`
 print(`f(a=1,b=2)`)",2|1|0|Error,0,,,"kwargs collected 2 keyword arguments, a and b."
@@ -337,7 +337,18 @@ print(`C()`.x)",5|<method>|Error|None,0,,,"x is read like an attribute, without 
 `def f(*a):return len(a)`
 print(`f(1,2,3,4)`)",4|3|1|Error,0,,,"*args collects every positional argument into a tuple — here, 4 of them."
 310,20,true_false,exercise,129,A double leading underscore triggers name mangling.,,true,,,"Python renames __balance internally, making it harder (not impossible) to access from outside the class."
-311,23,select_blank,exercise,149,python -m venv ___ creates a venv named env.,env|env.py|new|-env,0,,,"python -m venv env creates a new, isolated environment in a folder called env."
+311,23,select_blank,exercise,149,python -m venv ___ creates a venv named env.,env|`env.py`|new|-env,0,,,"`python -m venv env` creates a new, isolated environment in a folder called env."
 312,9,order,exercise,57,Order a comprehension's parts as written.,expression|for clause|if clause,,,,"A comprehension reads expression first, then the for clause that iterates, then an optional if clause that filters — e.g. [n**2 for n in nums if n>0]."
 313,2,order,exercise,8,"Order these by precedence, highest first.",parentheses|exponent **|multiplication *|addition +,,cards/card_313.png,,"Parentheses are evaluated first, then exponentiation, then multiplication/division, then addition/subtraction — the same order taught in arithmetic."
 314,10,order,exercise,64,Order how a call fills a function's parameters.,positional arguments bind first|keyword arguments bind by name|defaults fill anything still missing,,cards/card_314.png,,"Python binds positional arguments to parameters by position first, then keyword arguments by name, and only falls back to a parameter's default if nothing else filled it."
+315,11,multiple_choice,exercise,72,"Inside the function, `kwargs` is a what?",dict|list|tuple|set,0,,,`**kwargs` collects the extra keyword arguments into a dictionary.
+316,25,true_false,preview,317,This recap revisits Modulo.,,true,,,"Right: Modulo means remainder operator, and the cards that follow revisit it with other terms."
+317,25,match_pairs,main,,Match each term to its meaning.,Modulo↔Remainder operator|Exponentiation↔Raise to power|F-string↔Embedded-variable string|Indexing↔Pick by position,,,,Each term is paired with its plain-language meaning.
+318,25,match_pairs,exercise,317,Pair every term with its gloss.,Falsy↔Counts as False|Ternary expression↔One-line if/else|Slicing↔Pull out range|Unpacking↔Assign each item,,,,Each term is paired with its plain-language meaning.
+319,25,match_pairs,exercise,317,Which meaning fits each term?,Hashable↔Usable as key|List comprehension↔One-line list builder|Generator↔Values on demand|Positional argument↔Matched by order,,,,Each term is paired with its plain-language meaning.
+320,25,match_pairs,exercise,317,Connect the terms to what they mean.,Scope↔Where names work|LEGB rule↔Name lookup order|Type conversion↔Change data type|IndexError↔Bad position,,,,Each term is paired with its plain-language meaning.
+321,25,true_false,preview,322,This recap revisits ZeroDivisionError.,,true,,,"Right: ZeroDivisionError means divided by zero, and the cards that follow revisit it with other terms."
+322,25,match_pairs,main,,Match each term to its meaning.,"ZeroDivisionError↔Divided by zero|File I/O↔Reading, writing files|Constructor↔Runs on creation|Inheritance↔Reuse parent class",,,,Each term is paired with its plain-language meaning.
+323,25,match_pairs,exercise,322,Pair every term with its gloss.,"Overriding↔Replace parent method|Polymorphism↔Many behaviours|Encapsulation↔Bundle data, methods|Name mangling↔Renamed private attribute",,,,Each term is paired with its plain-language meaning.
+324,25,match_pairs,exercise,322,Which meaning fits each term?,Decorator↔Wraps a function|Higher-order function↔Takes functions|Sort key↔Decides sort order|Virtual environment↔Isolated packages,,,,Each term is paired with its plain-language meaning.
+325,25,match_pairs,exercise,322,Connect the terms to what they mean.,requirements.txt↔Dependency list|Type hint↔Expected type note|Docstring↔Built-in documentation|PEP 8↔Style guide,,,,Each term is paired with its plain-language meaning.

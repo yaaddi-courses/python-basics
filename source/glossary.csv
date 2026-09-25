@@ -1,58 +1,96 @@
 term,definition,link,introduced_by_card_id
-Variable,"A name you attach to a value so you can refer to it later — in Python you don't declare its type up front, and the same name can hold a different type of value later on.",,1
-Modulo,"The % operator: divides two numbers and gives you the remainder instead of the result — 7 % 2 is 1, because 7 divides by 2 with 1 left over.",,8
-Exponentiation,"The ** operator: raises a number to a power — 2 ** 3 means 2 multiplied by itself 3 times, giving 8.",,8
+Variable,"A name you attach to a value so you can refer to it later — in Python you don't declare its type up front, and the same name can hold a different type of value later on.",https://en.wikipedia.org/wiki/Variable_(computer_science),1
+Modulo,"The % operator: divides two numbers and gives you the remainder instead of the result — 7 % 2 is 1, because 7 divides by 2 with 1 left over.",https://en.wikipedia.org/wiki/Modulo,8
+Exponentiation,"The ** operator: raises a number to a power — 2 ** 3 means 2 multiplied by itself 3 times, giving 8.",https://en.wikipedia.org/wiki/Exponentiation,8
 String,"A sequence of characters used to represent text, like 'hello' — written between quotes, and immutable once created.",https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str,15
 F-string,"A string written with an f right before the opening quote that lets you drop a variable's value straight into the text using curly braces, like f'Hello, {name}!', instead of gluing pieces together manually.",https://docs.python.org/3/reference/lexical_analysis.html#f-strings,15
-Indexing,"Grabbing a single character or item out of a string or list by its position, counting from 0 — s[0] is the first item, and s[-1] is the last.",,15
-Slicing,"Pulling out a range of characters or items with s[start:end] — it grabs everything from start up to, but not including, end.",,36
-Boolean,A value that is either True or False — Python's way of representing a yes/no answer.,,8
-Truthy,"A value that counts as True when used in a condition, even though it isn't literally the word True — any non-empty string, non-zero number, or non-empty collection is truthy.",,22
-Falsy,"A value that counts as False when used in a condition — 0, an empty string '', an empty list [], and None are all falsy.",,22
-Ternary expression,"A one-line shortcut for an if/else that produces a value: value_if_true if condition else value_if_false, instead of writing a full multi-line if block.",,22
-Iteration,"Repeating a block of code once for every item in a sequence, like running the same line of code for each number in a list.",,29
-Iterable,"Anything you can loop over one item at a time — lists, tuples, strings, dictionaries, and ranges are all iterables.",,57
-List,"An ordered, mutable collection of items written in square brackets, like [1, 2, 3] — you can add, remove, or change its items after creating it.",,15
-Mutable,"Able to be changed in place after creation, without making a new object — lists and dictionaries are mutable.",,36
-Immutable,"Locked once created — its contents can never change afterward, only be replaced entirely with a new object. Strings, tuples, and numbers are all immutable.",,36
-Tuple,"An ordered, immutable collection of items written in parentheses, like (1, 2) — once created, its contents can never change.",,36
-Unpacking,"Assigning each item of a tuple (or list) to its own variable in one line, in order — x, y = (1, 2) gives x the value 1 and y the value 2.",,43
-Set,"An unordered collection that automatically drops duplicate values — adding the same item twice only keeps one copy, so {1, 1, 2} becomes {1, 2}.",,46
+Indexing,"Grabbing a single character or item out of a string or list by its position, counting from 0 — s[0] is the first item, and s[-1] is the last.",https://docs.python.org/3/tutorial/introduction.html#text,15
+Slicing,"Pulling out a range of characters or items with s[start:end] — it grabs everything from start up to, but not including, end.",https://docs.python.org/3/tutorial/introduction.html#lists,36
+Boolean,A value that is either True or False — Python's way of representing a yes/no answer.,https://docs.python.org/3/library/stdtypes.html#boolean-type-bool,8
+Truthy,"A value that counts as True when used in a condition, even though it isn't literally the word True — any non-empty string, non-zero number, or non-empty collection is truthy.",https://docs.python.org/3/library/stdtypes.html#truth-value-testing,22
+Falsy,"A value that counts as False when used in a condition — 0, an empty string '', an empty list [], and None are all falsy.",https://docs.python.org/3/library/stdtypes.html#truth-value-testing,22
+Ternary expression,"A one-line shortcut for an if/else that produces a value: value_if_true if condition else value_if_false, instead of writing a full multi-line if block.",https://docs.python.org/3/reference/expressions.html#conditional-expressions,22
+Iteration,"Repeating a block of code once for every item in a sequence, like running the same line of code for each number in a list.",https://en.wikipedia.org/wiki/Iteration,29
+Iterable,"Anything you can loop over one item at a time — lists, tuples, strings, dictionaries, and ranges are all iterables.",https://docs.python.org/3/glossary.html#term-iterable,57
+List,"An ordered, mutable collection of items written in square brackets, like [1, 2, 3] — you can add, remove, or change its items after creating it.",https://docs.python.org/3/glossary.html#term-list,15
+Mutable,"Able to be changed in place after creation, without making a new object — lists and dictionaries are mutable.",https://docs.python.org/3/glossary.html#term-mutable,36
+Immutable,"Locked once created — its contents can never change afterward, only be replaced entirely with a new object. Strings, tuples, and numbers are all immutable.",https://docs.python.org/3/glossary.html#term-immutable,36
+Tuple,"An ordered, immutable collection of items written in parentheses, like (1, 2) — once created, its contents can never change.",https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences,36
+Unpacking,"Assigning each item of a tuple (or list) to its own variable in one line, in order — x, y = (1, 2) gives x the value 1 and y the value 2.",https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences,43
+Set,"An unordered collection that automatically drops duplicate values — adding the same item twice only keeps one copy, so {1, 1, 2} becomes {1, 2}.",https://docs.python.org/3/tutorial/datastructures.html#sets,46
 Dictionary,"A collection that maps keys to values, written as key: value pairs inside curly braces — you look up a value by its key instead of by position.",https://docs.python.org/3/tutorial/datastructures.html#dictionaries,50
-Hashable,"Able to be used as a dictionary key (or set element) because its value can never change — numbers, strings, and tuples are hashable, but lists aren't, since they're mutable.",,50
-List comprehension,"A compact one-line way to build a new list from a loop and an expression — [expression for item in iterable], optionally with an if to filter — instead of writing a full for loop with append(). E.g. [n * 2 for n in [1, 2, 3]] gives [2, 4, 6].",,57
+Hashable,"Able to be used as a dictionary key (or set element) because its value can never change — numbers, strings, and tuples are hashable, but lists aren't, since they're mutable.",https://docs.python.org/3/glossary.html#term-hashable,50
+List comprehension,"A compact one-line way to build a new list from a loop and an expression — [expression for item in iterable], optionally with an if to filter — instead of writing a full for loop with append(). E.g. [n * 2 for n in [1, 2, 3]] gives [2, 4, 6].",https://docs.python.org/3/glossary.html#term-list-comprehension,57
 Generator,"An object that produces values one at a time, on demand, instead of building the whole sequence in memory up front — putting parentheses around a comprehension, like (x for x in nums), creates one.",https://docs.python.org/3/glossary.html#term-generator,57
-Function,"A reusable, named block of code that can take inputs (parameters) and hand back a result with return, so you don't have to rewrite the same logic every time you need it.",,1
-Positional argument,"A value passed into a function call that gets matched to a parameter by its order, rather than by name — the first value fills the first parameter, and so on.",,71
-Lambda,"A small, unnamed, single-expression function, written as lambda x: x*2 — handy for short, throwaway logic that doesn't need a full def and a name.",,72
-Scope,The region of code where a particular variable name is actually visible and usable — a variable created inside a function generally isn't reachable outside it.,,77
-LEGB rule,"The order Python searches for a variable's name when it's used: Local scope first, then Enclosing, then Global (module-level), then Built-in — stopping at the first match it finds.",,77
-Module,"A single file of Python code that can be imported and reused elsewhere with import, instead of copy-pasting its contents wherever you need them.",,77
-Type conversion,"Converting a value from one data type to another, like turning the text '42' into the number 42 with int('42') — necessary because input() always hands back text, even when the user typed digits.",,90
-Exception,"An error that occurs while a program is running, like dividing by zero, which — unlike a typo that stops the program from even starting — can be caught and handled with try/except instead of crashing the whole thing.",,97
-ZeroDivisionError,"The specific exception Python raises when a number is divided by zero, e.g. 1 / 0 or 5 // 0 — division by zero is mathematically undefined, so Python refuses instead of guessing an answer.",,97
-ValueError,"The specific exception Python raises when a value has the right type but isn't valid for what you're asking it to do, e.g. int('abc') fails because the text 'abc' can't be parsed as a number, even though a string is normally a fine argument for int().",,90
-TypeError,"The specific exception Python raises when an operation is given a value of the wrong type entirely, e.g. 'a' + 5 fails because you can't add a string and a number together, no matter what either one contains.",,43
-KeyError,"The specific exception Python raises when you look up a dictionary key that isn't there, e.g. d['missing'] on a dict without that key — d.get('missing') sidesteps it by returning a default value instead of erroring.",,50
-IndexError,"The specific exception Python raises when you access a list, tuple, or string position that doesn't exist, e.g. [1, 2, 3][5] fails because a 3-item list only has positions 0 through 2.",,90
-File I/O,"Reading data from a file on disk, or writing data to one — the ""I/O"" stands for input/output.",,104
-Class,"A blueprint for creating objects that share the same attributes and behavior — you define it once with class, then create as many individual instances of it as you need.",,7
-Instance,"One specific object built from a class — calling Dog('Rex') creates an instance whose own name is 'Rex', kept completely separate from any other Dog instance you create afterward.",,111
-Attribute,"A piece of data stored on an object, accessed with a dot, like dog.name or dog.age — a method is really just an attribute that happens to be a function instead of a plain value.",,117
-Method,"A function defined inside a class that acts on one specific instance, called with a dot like d.bark() — Python automatically passes that instance in as the method's first parameter, self.",,112
-Self,"The name — by convention, not a required keyword — given to an instance method's first parameter, which Python automatically fills in with the specific instance the method was called on.",,111
-Constructor,"A special method — __init__ in Python — that runs automatically right after a new instance of a class is created, typically used to set up that instance's starting attributes.",,117
+Function,"A reusable, named block of code that can take inputs (parameters) and hand back a result with return, so you don't have to rewrite the same logic every time you need it.",https://docs.python.org/3/glossary.html#term-function,1
+Positional argument,"A value passed into a function call that gets matched to a parameter by its order, rather than by name — the first value fills the first parameter, and so on.",https://docs.python.org/3/glossary.html#term-positional-argument,71
+Lambda,"A small, unnamed, single-expression function, written as lambda x: x*2 — handy for short, throwaway logic that doesn't need a full def and a name.",https://docs.python.org/3/glossary.html#term-lambda,72
+Scope,The region of code where a particular variable name is actually visible and usable — a variable created inside a function generally isn't reachable outside it.,https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,77
+LEGB rule,"The order Python searches for a variable's name when it's used: Local scope first, then Enclosing, then Global (module-level), then Built-in — stopping at the first match it finds.",https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,77
+Module,"A single file of Python code that can be imported and reused elsewhere with import, instead of copy-pasting its contents wherever you need them.",https://docs.python.org/3/glossary.html#term-module,77
+Type conversion,"Converting a value from one data type to another, like turning the text '42' into the number 42 with int('42') — necessary because input() always hands back text, even when the user typed digits.",https://en.wikipedia.org/wiki/Type_conversion,90
+Exception,"An error that occurs while a program is running, like dividing by zero, which — unlike a typo that stops the program from even starting — can be caught and handled with try/except instead of crashing the whole thing.",https://docs.python.org/3/tutorial/errors.html,97
+ZeroDivisionError,"The specific exception Python raises when a number is divided by zero, e.g. 1 / 0 or 5 // 0 — division by zero is mathematically undefined, so Python refuses instead of guessing an answer.",https://docs.python.org/3/library/exceptions.html#ZeroDivisionError,97
+ValueError,"The specific exception Python raises when a value has the right type but isn't valid for what you're asking it to do, e.g. int('abc') fails because the text 'abc' can't be parsed as a number, even though a string is normally a fine argument for int().",https://docs.python.org/3/library/exceptions.html#ValueError,90
+TypeError,"The specific exception Python raises when an operation is given a value of the wrong type entirely, e.g. 'a' + 5 fails because you can't add a string and a number together, no matter what either one contains.",https://docs.python.org/3/library/exceptions.html#TypeError,43
+KeyError,"The specific exception Python raises when you look up a dictionary key that isn't there, e.g. d['missing'] on a dict without that key — d.get('missing') sidesteps it by returning a default value instead of erroring.",https://docs.python.org/3/library/exceptions.html#KeyError,50
+IndexError,"The specific exception Python raises when you access a list, tuple, or string position that doesn't exist, e.g. [1, 2, 3][5] fails because a 3-item list only has positions 0 through 2.",https://docs.python.org/3/library/exceptions.html#IndexError,90
+File I/O,"Reading data from a file on disk, or writing data to one — the ""I/O"" stands for input/output.",https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files,104
+Class,"A blueprint for creating objects that share the same attributes and behavior — you define it once with class, then create as many individual instances of it as you need.",https://docs.python.org/3/glossary.html#term-class,1
+Instance,"One specific object built from a class — calling Dog('Rex') creates an instance whose own name is 'Rex', kept completely separate from any other Dog instance you create afterward.",https://en.wikipedia.org/wiki/Instance_(computer_science),111
+Attribute,"A piece of data stored on an object, accessed with a dot, like dog.name or dog.age — a method is really just an attribute that happens to be a function instead of a plain value.",https://docs.python.org/3/glossary.html#term-attribute,117
+Method,"A function defined inside a class that acts on one specific instance, called with a dot like d.bark() — Python automatically passes that instance in as the method's first parameter, self.",https://docs.python.org/3/glossary.html#term-method,111
+Self,"The name — by convention, not a required keyword — given to an instance method's first parameter, which Python automatically fills in with the specific instance the method was called on.",https://docs.python.org/3/tutorial/classes.html#method-objects,111
+Constructor,"A special method — __init__ in Python — that runs automatically right after a new instance of a class is created, typically used to set up that instance's starting attributes.",https://docs.python.org/3/reference/datamodel.html#object.__init__,117
 Inheritance,"A mechanism where one class (a subclass) is defined in terms of another (its parent class), automatically getting all of that parent's attributes and methods without having to rewrite them.",https://docs.python.org/3/tutorial/classes.html#inheritance,123
-Overriding,"When a subclass defines its own version of a method that its parent class already has, so calling that method on the subclass uses its version instead of the parent's.",,123
+Overriding,"When a subclass defines its own version of a method that its parent class already has, so calling that method on the subclass uses its version instead of the parent's.",https://en.wikipedia.org/wiki/Method_overriding,123
 Polymorphism,"Different classes being able to respond to the exact same method call in their own way — calling .speak() works the same regardless of which class's instance it's called on, but each class can answer differently.",https://docs.python.org/3/glossary.html#term-polymorphic,123
-Encapsulation,"Bundling an object's data together with the methods that operate on it inside a class, and hiding its internal details from outside code that doesn't need to see them.",,129
-Name mangling,"Python automatically renaming an attribute that starts with two underscores, like __balance, internally — which makes it harder, though not impossible, to access or accidentally overwrite from outside its class.",,129
+Encapsulation,"Bundling an object's data together with the methods that operate on it inside a class, and hiding its internal details from outside code that doesn't need to see them.",https://en.wikipedia.org/wiki/Encapsulation_(computer_programming),129
+Name mangling,"Python automatically renaming an attribute that starts with two underscores, like __balance, internally — which makes it harder, though not impossible, to access or accidentally overwrite from outside its class.",https://docs.python.org/3/tutorial/classes.html#private-variables,129
 Decorator,"A function, written with an @ symbol right above another function or method (like @property), that wraps and changes how that function behaves without you having to alter its actual code.",https://docs.python.org/3/glossary.html#term-decorator,132
-Higher-order function,"A function that takes another function as one of its arguments, or returns a function as its result — map(), filter(), and sorted()'s key= are all examples.",,135
-Sort key,"A function passed to sorted() (via key=) that Python runs on each item to decide what to actually sort by, instead of comparing the raw items directly — key=len sorts by length rather than alphabetically.",,142
+Higher-order function,"A function that takes another function as one of its arguments, or returns a function as its result — map(), filter(), and sorted()'s key= are all examples.",https://en.wikipedia.org/wiki/Higher-order_function,135
+Sort key,"A function passed to sorted() (via key=) that Python runs on each item to decide what to actually sort by, instead of comparing the raw items directly — key=len sorts by length rather than alphabetically.",https://docs.python.org/3/howto/sorting.html#key-functions,142
 Virtual environment,"An isolated Python setup with its own separately installed packages, kept apart from your system-wide Python and from other projects' environments, so different projects can depend on different package versions without conflicting.",https://docs.python.org/3/tutorial/venv.html,149
 pip,"Python's standard command-line tool for installing third-party packages from the Python Package Index, e.g. pip install requests.",https://pip.pypa.io/en/stable/,151
-requirements.txt,"A plain text file that conventionally lists a project's dependencies, one package per line, so anyone can recreate the exact same set of installed packages with pip install -r requirements.txt.",,151
+requirements.txt,"A plain text file that conventionally lists a project's dependencies, one package per line, so anyone can recreate the exact same set of installed packages with pip install -r requirements.txt.",https://pip.pypa.io/en/stable/reference/requirements-file-format/,151
 Type hint,"An optional annotation on a function or variable that documents the type of value it expects or returns, like age: int or -> str — Python doesn't enforce it at runtime, but tools like mypy and most editors use it to catch mistakes.",https://docs.python.org/3/library/typing.html,155
 Docstring,"A string written as the very first line inside a function, class, or module's body that documents what it does — readable later via help() or an editor's tooltip.",https://docs.python.org/3/glossary.html#term-docstring,158
 PEP 8,"Python's official, community-standard style guide covering naming, spacing, and formatting conventions — most Python code out in the wild follows it.",https://peps.python.org/pep-0008/,158
+input(),The built-in function that reads a line the user types and returns it as a string.,https://docs.python.org/3/library/functions.html#input,
+int(),"The built-in function that converts a value, such as a string, to a whole number.",https://docs.python.org/3/library/functions.html#int,
+float(),The built-in function that converts a value to a decimal number.,https://docs.python.org/3/library/functions.html#float,
+print(),The built-in function that writes text to the screen.,https://docs.python.org/3/library/functions.html#print,
+len(),The built-in function that returns how many items a sequence or collection holds.,https://docs.python.org/3/library/functions.html#len,
+sorted(),The built-in function that returns a new sorted list and leaves the original alone.,https://docs.python.org/3/library/functions.html#sorted,
+sum(),The built-in function that adds up the numbers in an iterable.,https://docs.python.org/3/library/functions.html#sum,
+map(),The built-in function that applies a function to every item of an iterable.,https://docs.python.org/3/library/functions.html#map,
+filter(),The built-in function that keeps only the items for which a function returns true.,https://docs.python.org/3/library/functions.html#filter,
+zip(),The built-in function that pairs up items from several iterables.,https://docs.python.org/3/library/functions.html#zip,
+enumerate(),The built-in function that yields each item together with its index.,https://docs.python.org/3/library/functions.html#enumerate,
+any(),The built-in function that returns True if at least one item is true.,https://docs.python.org/3/library/functions.html#any,
+all(),The built-in function that returns True only if every item is true.,https://docs.python.org/3/library/functions.html#all,
+open(),The built-in function that opens a file and returns a file object.,https://docs.python.org/3/library/functions.html#open,
+help(),The built-in function that shows the documentation for an object.,https://docs.python.org/3/library/functions.html#help,
+super(),The built-in function that gives access to a parent class's methods.,https://docs.python.org/3/library/functions.html#super,
+lower(),The string method that returns a copy with every letter in lowercase.,https://docs.python.org/3/library/stdtypes.html#str.lower,
+strip(),The string method that removes whitespace from both ends.,https://docs.python.org/3/library/stdtypes.html#str.strip,
+split(),The string method that breaks a string into a list of parts at a separator.,https://docs.python.org/3/library/stdtypes.html#str.split,
+append(),The list method that adds one item to the end of the list.,https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,
+extend(),The list method that adds every item of another iterable to the end.,https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,
+pop(),"The list method that removes and returns an item, the last one by default.",https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,
+sort(),The list method that sorts the list in place and returns None.,https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,
+keys(),The dictionary method that returns a view of all the keys.,https://docs.python.org/3/library/stdtypes.html#dict.keys,
+items(),The dictionary method that returns a view of all the key and value pairs.,https://docs.python.org/3/library/stdtypes.html#dict.items,
+get(),"The dictionary method that returns the value for a key, or a default if the key is missing.",https://docs.python.org/3/library/stdtypes.html#dict.get,
+read(),The file method that returns the whole content of the file as one string.,https://docs.python.org/3/library/io.html#io.TextIOBase.read,
+readlines(),The file method that returns the lines of the file as a list of strings.,https://docs.python.org/3/library/io.html#io.IOBase.readlines,
+close(),The file method that closes the file so its resources are released.,https://docs.python.org/3/library/io.html#io.IOBase.close,
+math.floor(),The function that rounds a number down to the nearest whole number.,https://docs.python.org/3/library/math.html#math.floor,
+None,Python's special value that means 'no value here'.,https://docs.python.org/3/library/constants.html#None,22
+Optional,A type hint meaning a value can be of the given type or None.,https://docs.python.org/3/library/typing.html#typing.Optional,57
+__init__,"The special method that runs when a new object is created, used to set it up.",https://docs.python.org/3/reference/datamodel.html#object.__init__,
+LEGB,"The order Python searches scopes: Local, Enclosing, Global, Built-in.",https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,
+PEP,"Python Enhancement Proposal: a numbered design document for Python, such as PEP 8 for style.",https://peps.python.org/pep-0001/,
+XOR,"Exclusive or: true when exactly one of two conditions is true, written ^ on numbers.",https://en.wikipedia.org/wiki/Exclusive_or,
+-r,The `pip install` flag that installs every package listed in a requirements file.,https://pip.pypa.io/en/stable/cli/pip_install/,
+_name,"A name starting with one underscore, which by convention marks an attribute as non-public.",https://docs.python.org/3/tutorial/classes.html#private-variables,
