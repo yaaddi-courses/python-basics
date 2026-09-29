@@ -4,7 +4,7 @@
   "description": "A complete beginner-to-solid-fundamentals path through Python — syntax, data structures, functions, files, and OOP essentials.",
   "image": "cover.png",
   "file": "python-basics.zip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "tags": [
     "python",
     "programming",
@@ -20,6 +20,11 @@
       "version": "1.0.1",
       "date": "2026-09-24",
       "notes": "Wrapped code, commands and file names in backticks so they render as code (95 card(s))."
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-09-30",
+      "notes": "Code samples are now proper formatted code blocks (monospace, indentation kept, syntax colors) instead of one inline chip per line, and are cleaned up to standard Python style (51 fields)."
     }
   ],
   "toc": [
