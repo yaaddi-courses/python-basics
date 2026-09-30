@@ -4,7 +4,7 @@
   "description": "A complete beginner-to-solid-fundamentals path through Python — syntax, data structures, functions, files, and OOP essentials.",
   "image": "cover.png",
   "file": "python-basics.zip",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "tags": [
     "python",
     "programming",
@@ -25,6 +25,11 @@
       "version": "1.0.2",
       "date": "2026-09-30",
       "notes": "Code samples are now proper formatted code blocks (monospace, indentation kept, syntax colors) instead of one inline chip per line, and are cleaned up to standard Python style (51 fields)."
+    },
+    {
+      "version": "1.0.3",
+      "date": "2026-09-30",
+      "notes": "Removed the stray \"Listen:\" prefix from 24 pronunciation-and-definition questions; the question stands on its own and the audio remains as a pronunciation aid. Code inside questions and answer options (fill-in-the-blank lines, list/set/string results) is now marked as code so it shows in the editor-style code font and colors (including keywords such as for, True and None, and the set-union answer that was missing its | symbol)."
     }
   ],
   "toc": [

@@ -94,3 +94,35 @@ PEP,"Python Enhancement Proposal: a numbered design document for Python, such as
 XOR,"Exclusive or: true when exactly one of two conditions is true, written ^ on numbers.",https://en.wikipedia.org/wiki/Exclusive_or,
 -r,The `pip install` flag that installs every package listed in a requirements file.,https://pip.pypa.io/en/stable/cli/pip_install/,
 _name,"A name starting with one underscore, which by convention marks an attribute as non-public.",https://docs.python.org/3/tutorial/classes.html#private-variables,
+True,The Python boolean value meaning yes; its type is bool.,https://docs.python.org/3/library/constants.html#True,42
+False,The Python boolean value meaning no; its type is bool.,https://docs.python.org/3/library/constants.html#False,5
+toLowerCase(),A JavaScript string method; Python uses the lower() method instead.,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase,19
+push(),A JavaScript array method that adds an item to the end; a Python list uses append().,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push,37
+insert(),The list method that puts an item at a chosen position instead of at the end.,https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,37
+Ada,A name used as a sample string value in the dictionary examples.,https://en.wikipedia.org/wiki/Ada_Lovelace,50
+GEBL,A scrambled version of the scope order; the correct Python order is LEGB.,https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,77
+BLEG,A scrambled version of the scope order; the correct Python order is LEGB.,https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,77
+LGEB,A scrambled version of the scope order; the correct Python order is LEGB.,https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces,77
+__name__,"The built-in variable holding a module's name, which is ""__main__"" when the file is run directly.",https://docs.python.org/3/library/__main__.html,84
+__main__,"The name Python gives the module run directly, used in the if __name__ == ""__main__"" guard.",https://docs.python.org/3/library/__main__.html,89
+Cat,A sample class name used in the inheritance examples.,https://docs.python.org/3/tutorial/classes.html#inheritance,123
+Animal,A sample base class used in the inheritance examples.,https://docs.python.org/3/tutorial/classes.html#inheritance,123
+-e,"The pip flag that installs a project in editable mode, so code changes take effect without reinstalling.",https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs,153
+setup.py,A legacy Python file that describes how to build and install a package.,https://packaging.python.org/en/latest/guides/modernize-setup-py-project/,153
+Union,A type hint meaning a value may be one of several listed types.,https://docs.python.org/3/library/typing.html#typing.Union,160
+ALLCAPS,"A naming style with every letter capitalised, used in Python for constants.",https://peps.python.org/pep-0008/#constants,307
+UpperCamelCase,"A naming style that capitalises each word with no underscores, used in Python for class names.",https://peps.python.org/pep-0008/#class-names,307
+Variables,Names that refer to values stored in memory.,https://docs.python.org/3/tutorial/introduction.html,1
+Strings,Text values written between quotes.,https://docs.python.org/3/tutorial/introduction.html#text,15
+F-strings,Strings starting with f that embed expressions in curly braces.,https://docs.python.org/3/reference/lexical_analysis.html#f-strings,15
+Iterations,Single passes through the body of a loop.,https://en.wikipedia.org/wiki/Iteration#Computing,29
+Lists,"Ordered, changeable collections of items written in square brackets.",https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,15
+Tuples,Ordered collections that cannot be changed after they are created.,https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences,36
+Sets,Unordered collections of unique items.,https://docs.python.org/3/tutorial/datastructures.html#sets,46
+Functions,"Named, reusable blocks of code defined with def.",https://docs.python.org/3/tutorial/controlflow.html#defining-functions,1
+Positional arguments,"Values passed to a function in order, matched to parameters by position.",https://docs.python.org/3/glossary.html#term-argument,71
+Attributes,"Values stored on an object or class, reached with dot notation.",https://docs.python.org/3/glossary.html#term-attribute,117
+Methods,Functions defined inside a class that act on its objects.,https://docs.python.org/3/glossary.html#term-method,111
+Higher-order functions,"Functions that take other functions as input or return them, such as map and filter.",https://en.wikipedia.org/wiki/Higher-order_function,135
+Virtual environments,Isolated Python setups with their own installed packages.,https://docs.python.org/3/tutorial/venv.html,149
+Type hints,"Optional notes about the types a function expects and returns, not enforced at runtime.",https://docs.python.org/3/library/typing.html,155
