@@ -501,3 +501,46 @@ print(`f(1, 2, 3, 4)`)
 323,25,match_pairs,exercise,322,Pair every term with its gloss.,"Overriding↔Replace parent method|Polymorphism↔Many behaviours|Encapsulation↔Bundle data, methods|Name mangling↔Renamed private attribute",,,,Each term is paired with its plain-language meaning.
 324,25,match_pairs,exercise,322,Which meaning fits each term?,Decorator↔Wraps a function|Higher-order function↔Takes functions|Sort key↔Decides sort order|Virtual environment↔Isolated packages,,,,Each term is paired with its plain-language meaning.
 325,25,match_pairs,exercise,322,Connect the terms to what they mean.,requirements.txt↔Dependency list|Type hint↔Expected type note|Docstring↔Built-in documentation|PEP 8↔Style guide,,,,Each term is paired with its plain-language meaning.
+326,1,multiple_choice,exam,,Which function prints text to the console?,`print()`|`input()`|`open()`,0,,,`print()` shows text on the screen.
+327,2,multiple_choice,exam,,Which operator does floor division?,`**`|`//`|`%`,1,,,"`//` divides and rounds down, discarding any remainder."
+328,2,multiple_choice,exam,,Which operator gives the remainder?,`//`|`**`|`%`,2,,,The modulo operator returns what is left after division.
+329,2,true_false,exam,,`2 ** 3` raises 2 to the power of 3.,,true,,,Exponentiation gives 8.
+330,3,multiple_choice,exam,,Which string embeds the variable name?,`'name'`|`f'{name}'`|`'{name}'`,1,,,An f-string places variables in curly braces.
+331,6,true_false,exam,,Strings in Python can be changed in place.,,false,,,Strings are immutable; you create a new one.
+332,4,multiple_choice,exam,,A conditional chain always starts with:,`if`|`elif`|`else`,0,,,It can have any number of `elif` branches and may end with `else`.
+333,9,multiple_choice,exam,,Which branch runs when nothing else matched?,`if`|`else`|`elif`,1,,,`else` is the optional last branch.
+334,5,multiple_choice,exam,,`range(5)` produces how many numbers?,Four|Six|Five,2,,,"It gives 0, 1, 2, 3, 4."
+335,5,true_false,exam,,`range(5)` includes the number 5.,,false,,,It stops before 5.
+336,6,multiple_choice,exam,,Lists are:,Constant|Mutable|Immutable,1,,,"You can add, remove or change items."
+337,17,multiple_choice,exam,,Which method adds an item to a list's end?,`add()`|`push()`|`append()`,2,,,`append()` adds one item at the end.
+338,7,multiple_choice,exam,,Tuples are:,Immutable|Mutable|Sorted,0,,,Their contents cannot change after creation.
+339,7,multiple_choice,exam,,A set automatically removes:,Strings|Duplicates|Numbers,1,,,Every element in a set is unique.
+340,8,multiple_choice,exam,,A dictionary maps keys to:,Indexes|Types|Values,2,,,You look values up by key.
+341,8,true_false,exam,,Dictionary keys must be unique.,,true,,,A repeated key overwrites the earlier value.
+342,9,multiple_choice,exam,,What does a list comprehension build?,A string|A list|A tuple,1,,,A comprehension packs a loop and a transformation into one line.
+343,10,multiple_choice,exam,,Which keyword starts a function definition?,`func`|`fn`|`def`,2,,,It is followed by the name and parameters.
+344,10,true_false,exam,,A function without `return` gives back `None`.,,true,,,"It still finishes, but with no explicit value."
+345,11,multiple_choice,exam,,`*args` collects extra:,Return values|Positional arguments|Keyword arguments,1,,,They arrive as a tuple.
+346,11,multiple_choice,exam,,`**kwargs` collects extra:,Positional arguments|Imports|Keyword arguments,2,,,They arrive as a dictionary.
+347,12,multiple_choice,exam,,Python looks up names in which order?,LEGB|Alphabetical|Random,0,,,"Local, Enclosing, Global, Built-in."
+348,13,multiple_choice,exam,,Which keyword imports just one name?,`include`|`from`|`export`,1,,,`from math import sqrt` pulls just that name into your code.
+349,14,multiple_choice,exam,,Which function reads typed user input?,`print()`|`open()`|`input()`,2,,,It always returns text.
+350,14,true_false,exam,,`input()` returns a number automatically.,,false,,,It returns a string; convert it with `int()` or `float()`.
+351,15,multiple_choice,exam,,"In exception handling, `try` comes before:",`else`|`except`|`finally`,1,,,"The order is try, except, else, finally."
+352,15,multiple_choice,exam,,Which block always runs at the end?,`else`|`except`|`finally`,2,,,It runs whether or not an error happened.
+353,16,multiple_choice,exam,,Which statement closes a file automatically?,`with`|`while`|`for`,0,,,It closes the file even if an error happens.
+354,17,multiple_choice,exam,,Which keyword starts a class definition?,`type`|`class`|`object`,1,,,Calling the class creates a new instance.
+355,18,multiple_choice,exam,,`__init__` runs when an instance is:,Deleted|Printed|Created,2,,,It is Python's constructor method.
+356,18,true_false,exam,,`self` refers to the current instance.,,true,,,It is the first parameter of an instance method.
+357,19,multiple_choice,exam,,"In `class Cat(Animal)`, `Animal` is the:",Module|Parent class|Child class,1,,,Cat inherits its attributes and methods.
+358,20,multiple_choice,exam,,A leading underscore means an attribute is:,Private forever|Deleted|Non-public,2,,,It is only a convention for other developers.
+359,20,multiple_choice,exam,,Which decorator makes a method act like an attribute?,`@property`|`@static`|`@method`,0,,,You can call it without parentheses.
+360,21,multiple_choice,exam,,Which function applies another function to every item?,`sum()`|`map()`|`zip()`,1,,,It returns an iterator of the results.
+361,22,multiple_choice,exam,,Which function returns a sorted copy?,`list.sort()`|`print()`|`sorted()`,2,,,`list.sort()` sorts in place instead.
+362,22,true_false,exam,,`list.sort()` returns a new sorted list.,,false,,,It sorts in place and returns `None`.
+363,23,multiple_choice,exam,,Which module creates virtual environments?,`sys`|`venv`|`pip`,1,,,`python -m venv myenv` creates an isolated environment.
+364,23,multiple_choice,exam,,Which tool installs third-party packages?,`venv`|`def`|`pip`,2,,,`pip install` adds a package to your environment.
+365,24,multiple_choice,exam,,Type hint `-> str` marks the function's:,Return type|Parameter type|Docstring,0,,,The arrow annotates what the function returns.
+366,24,multiple_choice,exam,,Python's official style guide is:,PEP 1|PEP 8|PEP 20,1,,,Most Python code follows it.
+367,25,multiple_choice,exam,,Modulo is the operator for the:,Quotient|Power|Remainder,2,,,It is written `%`.
+368,25,multiple_choice,exam,,A ZeroDivisionError comes from dividing by:,Zero|One|Ten,0,,,Python stops with that error.

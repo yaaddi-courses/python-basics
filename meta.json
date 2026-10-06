@@ -4,7 +4,7 @@
   "description": "A complete beginner-to-solid-fundamentals path through Python — syntax, data structures, functions, files, and OOP essentials.",
   "image": "cover.png",
   "file": "python-basics.zip",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "tags": [
     "python",
     "programming",
@@ -13,28 +13,8 @@
   "changelog": [
     {
       "version": "1.0.0",
-      "date": "2026-08-18",
+      "date": "2026-09-30",
       "notes": "Converted 2 cards (\"self\" naming convention, \"PEP 8\" style guide name) from typing types to tap-based select_blank -- typing cards should be reserved for cards whose answer is actual code/CLI syntax, not a definitional/naming-convention term."
-    },
-    {
-      "version": "1.0.1",
-      "date": "2026-09-24",
-      "notes": "Wrapped code, commands and file names in backticks so they render as code (95 card(s))."
-    },
-    {
-      "version": "1.0.2",
-      "date": "2026-09-30",
-      "notes": "Code samples are now proper formatted code blocks (monospace, indentation kept, syntax colors) instead of one inline chip per line, and are cleaned up to standard Python style (51 fields)."
-    },
-    {
-      "version": "1.0.3",
-      "date": "2026-09-30",
-      "notes": "Removed the stray \"Listen:\" prefix from 24 pronunciation-and-definition questions; the question stands on its own and the audio remains as a pronunciation aid. Code inside questions and answer options (fill-in-the-blank lines, list/set/string results) is now marked as code so it shows in the editor-style code font and colors (including keywords such as for, True and None, and the set-union answer that was missing its | symbol)."
-    },
-    {
-      "version": "1.1.0",
-      "date": "2026-09-30",
-      "notes": "Removed 14 card pictures that were misleading, unrelated or garbled; added an explanation to 13 cards that had none; reworded 2 ordering prompts to say which end comes first."
     }
   ],
   "toc": [
