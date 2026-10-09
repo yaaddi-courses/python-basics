@@ -112,15 +112,15 @@ setup.py,A legacy Python file that describes how to build and install a package.
 Union,A type hint meaning a value may be one of several listed types.,https://docs.python.org/3/library/typing.html#typing.Union,160
 ALLCAPS,"A naming style with every letter capitalised, used in Python for constants.",https://peps.python.org/pep-0008/#constants,307
 UpperCamelCase,"A naming style that capitalises each word with no underscores, used in Python for class names.",https://peps.python.org/pep-0008/#class-names,307
-Variables,Names that refer to values stored in memory.,https://docs.python.org/3/tutorial/introduction.html,1
-Strings,Text values written between quotes.,https://docs.python.org/3/tutorial/introduction.html#text,15
+Variables,Names that refer to values stored in memory.,https://en.wikipedia.org/wiki/Variable_(computer_science),1
+Strings,Text values written between quotes.,https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str,15
 F-strings,Strings starting with f that embed expressions in curly braces.,https://docs.python.org/3/reference/lexical_analysis.html#f-strings,15
-Iterations,Single passes through the body of a loop.,https://en.wikipedia.org/wiki/Iteration#Computing,29
-Lists,"Ordered, changeable collections of items written in square brackets.",https://docs.python.org/3/tutorial/datastructures.html#more-on-lists,15
+Iterations,Single passes through the body of a loop.,https://en.wikipedia.org/wiki/Iteration,29
+Lists,"Ordered, changeable collections of items written in square brackets.",https://docs.python.org/3/glossary.html#term-list,15
 Tuples,Ordered collections that cannot be changed after they are created.,https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences,36
 Sets,Unordered collections of unique items.,https://docs.python.org/3/tutorial/datastructures.html#sets,46
-Functions,"Named, reusable blocks of code defined with def.",https://docs.python.org/3/tutorial/controlflow.html#defining-functions,1
-Positional arguments,"Values passed to a function in order, matched to parameters by position.",https://docs.python.org/3/glossary.html#term-argument,71
+Functions,"Named, reusable blocks of code defined with def.",https://docs.python.org/3/glossary.html#term-function,1
+Positional arguments,"Values passed to a function in order, matched to parameters by position.",https://docs.python.org/3/glossary.html#term-positional-argument,71
 Attributes,"Values stored on an object or class, reached with dot notation.",https://docs.python.org/3/glossary.html#term-attribute,117
 Methods,Functions defined inside a class that act on its objects.,https://docs.python.org/3/glossary.html#term-method,111
 Higher-order functions,"Functions that take other functions as input or return them, such as map and filter.",https://en.wikipedia.org/wiki/Higher-order_function,135
