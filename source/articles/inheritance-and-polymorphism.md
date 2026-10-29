@@ -3,27 +3,29 @@
 **Covers:** Inheritance, Overriding, Polymorphism, Animal, Cat, super()
 
 ## Reusing a class and changing parts of it {#overview}
-Many classes share most of their content. Cats and dogs both have a name and make a sound. Writing the common part twice invites mistakes. Inheritance lets a new class start from an existing one, and change only what differs.
+Many classes share most of their content. Cats and dogs both have a name and make a sound. If you write the common part twice, you invite mistakes, because the two copies drift apart. Inheritance solves this: a new class starts from an existing one and changes only what differs. Let's see how that works.
 
 ## Animal {#animal}
-`Animal` is the sample base class used in these examples. It holds what all animals have in common, such as a name and a `speak` method. It is only a teaching name. In real programs, base classes are named after the idea they represent.
+In these examples, `Animal` is the base class. It holds what all animals have in common, such as a name and a `speak` method. The name is only for teaching. In real programs, you name a base class after the idea it represents.
 
 ## Cat {#cat}
-`Cat` is a sample class that inherits from `Animal`. It keeps everything the base class provides, and adds or changes only what is special about cats.
+`Cat` is a sample class that inherits from `Animal`. It keeps everything the base class provides, and it adds or changes only what is special about cats.
 
 ## Inheritance {#inheritance}
-Inheritance is a mechanism in which one class, the subclass, is defined in terms of another, its parent class, and automatically gets all of the parent's attributes and methods. You write the parent's name in parentheses: `class Cat(Animal):`. The subclass can then add new features of its own. Use it for an "is a" relation: a cat is an animal.
+With inheritance, one class, the subclass, is defined in terms of another, its parent class, and it automatically gets all of the parent's attributes and methods. You write the parent's name in parentheses: `class Cat(Animal):`. The subclass can then add features of its own. Use it for an "is a" relation: a cat is an animal.
 
 ## Overriding {#overriding}
-Overriding is when a subclass defines its own version of a method that its parent already has, so that calling that method on the subclass uses the new version instead. The name stays the same, and the behavior changes.
+Sometimes the subclass needs different behavior for something the parent already does. Overriding means the subclass defines its own version of a method that the parent has, so calling that method on the subclass uses the new version. The name stays the same and the behavior changes.
 
 ## super() {#super}
-`super()` gives access to a parent class's methods from inside the subclass. Its most common use is in `__init__`: the subclass calls `super().__init__(...)` so that the parent's setup still runs, and then adds its own.
+When you override, you often still want the parent's version to happen too. `super()` gives you access to the parent class's methods from inside the subclass. The most common use is in `__init__`: the subclass calls `super().__init__(...)` so the parent's preparation still happens, and then adds its own.
 
 ## Polymorphism {#polymorphism}
-Polymorphism means that different classes can respond to the same method call, each in its own way. Calling `.speak()` works on any animal, whatever its class, and each gives its own result. The calling code does not need to know which kind it holds.
+Now the payoff. Polymorphism means that different classes can respond to the same method call, each in its own way. Calling `.speak()` works on any animal, whatever its class, and each one gives its own result. The calling code does not need to know which kind it holds.
 
 ## A worked example {#example}
+Let's read the whole picture first:
+
 ```python
 class Animal:
     def __init__(self, name):
@@ -53,14 +55,14 @@ for pet in pets:
 print(pets[2].indoor)  # True
 ```
 
-What the example shows:
+Here is what the example shows:
 
 1. **Inheritance.** `Dog` and `Cat` get `__init__` and `speak` from `Animal` without rewriting the name handling.
 2. **Overriding.** Both subclasses define `speak` again. `Animal("Generic").speak()` uses the base version, and the others use their own.
-3. **`super()`.** `Cat` needs an extra value, `indoor`. Its `__init__` calls `super().__init__(name)` so the base class stores the name, and then sets its own attribute. Without that call, `self.name` would never be set, and `speak` would fail.
-4. **Polymorphism.** The loop calls `pet.speak()` for each pet and does not check the kind. Adding a `Bird` class later requires no change to the loop.
+3. **`super()`.** `Cat` needs an extra value, `indoor`. Its `__init__` calls `super().__init__(name)` so the base class stores the name, and then it stores its own attribute. Without that call, `self.name` would never exist, and `speak` would fail.
+4. **Polymorphism.** The loop calls `pet.speak()` for each pet and never checks the kind. If you add a `Bird` class later, the loop needs no change.
 
-Check the relationship:
+You can check the relationship:
 
 ```python
 class Animal:
@@ -75,9 +77,9 @@ print(isinstance(tom, Animal))  # True
 print(issubclass(Cat, Animal))  # True
 ```
 
-A `Cat` is also an `Animal`, so it can be used wherever an `Animal` is expected.
+A `Cat` is also an `Animal`, so you can use it wherever an `Animal` is expected.
 
-Count the saving. If ten animal classes each repeated the 4-line name setup, that is 40 lines, with the same bug fixable in ten places. With a base class, 4 lines in one place.
+Let's count the saving. If ten animal classes each repeated the 4-line name setup, that is 40 lines, and a bug in it must be fixed in ten places. With a base class, it is 4 lines in one place.
 
 Without polymorphism, the loop would need a chain of checks:
 
@@ -87,19 +89,21 @@ elif kind == "cat": ...
 elif kind == "bird": ...
 ```
 
-and every new kind means editing that chain. With it, new kinds are added as new classes, and the loop is untouched.
+and every new kind would mean editing that chain. With polymorphism, you add new kinds as new classes and leave the loop untouched.
 
-A word of caution about inheritance. It is a strong link: changing the parent can break every subclass. Deep chains of many levels are hard to follow. Prefer shallow hierarchies, and when the relation is "has a" and not "is a", store the other object as an attribute instead.
+A word of caution about inheritance. It is a strong link, so changing the parent can break every subclass, and deep chains of many levels are hard to follow. Prefer shallow hierarchies. When the relation is "has a" instead of "is a", store the other object as an attribute.
 
 | Idea | In one line |
 |---|---|
 | Inheritance | `class Cat(Animal):` reuses the parent |
 | Overriding | A subclass redefines a parent method |
-| `super()` | Runs the parent's version from inside |
+| `super()` | Reaches the parent's version from inside |
 | Polymorphism | One call, many behaviors |
 
 ## A common mistake {#mistake}
-Overriding `__init__` without calling `super().__init__()`, so the parent's attributes are never set. Another is using inheritance only to share a few lines of code, between classes that are not really the same kind of thing.
+A common slip is overriding `__init__` without calling `super().__init__()`, so the parent's attributes never exist.
+
+A second slip is using inheritance only to share a few lines of code between classes that are not really the same kind of thing.
 
 ## Key points {#key-points}
 - A subclass inherits attributes and methods from its parent.

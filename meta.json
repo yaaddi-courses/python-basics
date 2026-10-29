@@ -4,7 +4,7 @@
   "description": "A complete beginner-to-solid-fundamentals path through Python — syntax, data structures, functions, files, and OOP essentials.",
   "image": "cover.png",
   "file": "python-basics.zip",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "tags": [
     "python",
     "programming",
@@ -25,6 +25,21 @@
       "version": "1.1.0",
       "date": "2026-10-29",
       "notes": "Adds Learn more articles (20, each with a worked example) for the glossary terms; tapping a term now offers \"Read the full explanation\"."
+    },
+    {
+      "version": "1.1.1",
+      "date": "2026-10-29",
+      "notes": "Removes the Wikipedia links from glossary terms that have a Learn more article; the article is now the single place to read more."
+    },
+    {
+      "version": "1.1.2",
+      "date": "2026-10-29",
+      "notes": "Rewrites the Learn more articles in a warmer, teacher-to-student voice; no change to the content or the glossary."
+    },
+    {
+      "version": "1.1.3",
+      "date": "2026-10-29",
+      "notes": "Cards and glossary: wrong-answer names such as downcase() and Maybe now have glossary entries and Learn more articles; broken code formatting fixed in several cards."
     }
   ],
   "toc": [

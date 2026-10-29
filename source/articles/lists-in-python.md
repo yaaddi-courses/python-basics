@@ -3,16 +3,16 @@
 **Covers:** List, append(), extend(), pop(), insert(), push(), Mutable, Immutable
 
 ## An ordered collection {#overview}
-Programs often hold many values of a kind: scores, names, prices. A list holds them in order and lets you add, remove and change items. This article shows the main list operations, and explains the property that decides how they behave: whether a value can be changed in place.
+Programs often hold many values of one kind: scores, names, prices. A list keeps them in order and lets you add, remove and change items. In this article you will learn the main list operations, and the property that explains how they behave: whether a value can be changed in place.
 
 ## List {#list}
-A list is an ordered, mutable collection of items written in square brackets, like `[1, 2, 3]`. The items may be of different types, and you can add, remove or change them after the list has been created. Positions start at 0, and negative positions count from the end.
+A list is an ordered collection of items, written in square brackets, like `[1, 2, 3]`. The items may be of different types, and you can add, remove or change them after the list has been created. Positions start at 0, and negative positions count from the end.
 
 ## Mutable {#mutable}
-Mutable describes an object whose content can be altered after it is created, with no new object made. Lists and dictionaries are mutable. If two names point at the same list, a change made through one name is visible through the other, because there is only one list.
+Mutable describes an object whose content can be altered after it is created, without making a new object. Lists and dictionaries are mutable. This has a consequence you should remember: if two names point at the same list, a change through one name shows up through the other, because there is only one list.
 
 ## Immutable {#immutable}
-Immutable means locked once created: its content never changes, and it can only be replaced entirely with a new object. Strings, numbers and tuples are immutable. Immutable values are safe to share, since nobody can change them under you.
+Immutable is the opposite. The content never changes, and you can only replace the whole object with a new one. Strings, numbers and tuples are immutable. Immutable values are safe to share, since nobody can change them under you.
 
 ## append() {#append}
 `append()` adds one item to the end of a list. It changes the list in place and returns nothing.
@@ -21,16 +21,16 @@ Immutable means locked once created: its content never changes, and it can only 
 `extend()` adds every item of another collection to the end. Where `append([4, 5])` adds a list as one item, `extend([4, 5])` adds two items.
 
 ## insert() {#insert}
-`insert()` puts an item at a chosen position instead of at the end: `insert(0, "x")` puts it first. The items after it move one place along.
+`insert()` puts an item at a position you choose instead of at the end: `insert(0, "x")` puts it first. The items after it move one place along.
 
 ## pop() {#pop}
-`pop()` removes and returns an item, the last one by default, or the one at a given position.
+`pop()` removes an item and gives it back to you. By default it takes the last one, or you can name a position.
 
 ## push() {#push}
-`push()` is the JavaScript name for adding an item to the end of an array. Python has no `push()`, and a list uses `append()` instead.
+If you have used JavaScript, you may look for `push()`, the name for adding an item to the end of an array. Python has no `push()`. A list uses `append()` instead.
 
 ## A worked example {#example}
-Start with a shopping list and change it.
+Let's start with a shopping list and change it.
 
 ```python
 items = ["milk", "eggs"]
@@ -45,7 +45,7 @@ print(last)   # tea
 print(items)  # ['coffee', 'milk', 'eggs', 'bread', 'jam']
 ```
 
-Count: 2 items at the start, 3 after `append`, 5 after `extend`, 6 after `insert`, 5 after `pop`. Compare `append` and `extend`:
+Let's count: 2 items at the start, 3 after `append`, 5 after `extend`, 6 after `insert` and 5 after `pop`. Now compare `append` and `extend`:
 
 ```python
 a = [1, 2]
@@ -56,9 +56,9 @@ b.extend([3, 4])
 print(b)  # [1, 2, 3, 4]
 ```
 
-`a` has 3 items, one of which is a list. `b` has 4 items.
+`a` has 3 items, and one of them is a list. `b` has 4 items.
 
-Now mutability, the cause of many surprises:
+Now mutability, which causes many surprises:
 
 ```python
 first = [1, 2, 3]
@@ -67,7 +67,7 @@ second.append(4)
 print(first)  # [1, 2, 3, 4]
 ```
 
-There was only one list, and two names for it. Appending through `second` changed what `first` shows. To get an independent list, copy it:
+There was only one list, with two names for it. Appending through `second` changed what `first` shows. To get an independent list, copy it:
 
 ```python
 first = [1, 2, 3]
@@ -77,7 +77,7 @@ print(first)   # [1, 2, 3]
 print(second)  # [1, 2, 3, 4]
 ```
 
-Compare with an immutable value:
+Compare that with an immutable value:
 
 ```python
 word = "cat"
@@ -89,7 +89,7 @@ print(other)  # cats
 
 Here `other + "s"` made a new string, so `word` could not change.
 
-Speed also differs. `append()` and `pop()` at the end are quick. `insert(0, x)` has to shift all the other items, so for a list of 1,000,000 items it moves a million places, much slower. If you often add at the front, a different structure is better.
+Speed differs too. `append()` and `pop()` at the end are quick. `insert(0, x)` has to shift all the other items, so for a list of 1,000,000 items it moves a million places, which is much slower. If you often add at the front, a different structure is better.
 
 | Operation | Effect | Returns |
 |---|---|---|
@@ -99,7 +99,9 @@ Speed also differs. `append()` and `pop()` at the end are quick. `insert(0, x)` 
 | `pop()` | Removes the last item | That item |
 
 ## A common mistake {#mistake}
-Writing `items = items.append("x")`. `append()` returns nothing, so `items` becomes `None`, and the list is lost. Call it on its own line. Another is thinking that `second = first` makes a copy. It does not.
+A common slip is writing `items = items.append("x")`. It returns nothing, so `items` becomes `None` and the list is lost. Call it on a line of its own.
+
+A second slip is thinking that `second = first` makes a copy. It does not.
 
 ## Key points {#key-points}
 - A list is ordered and mutable. Strings, numbers and tuples are immutable.

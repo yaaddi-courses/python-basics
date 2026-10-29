@@ -3,28 +3,28 @@
 **Covers:** File I/O, open(), read(), readlines(), close()
 
 ## Data that outlives the program {#overview}
-Variables disappear when a program ends. To keep information, a program writes it to a file, and to use it later, reads it back. Python makes this short, but a few details decide whether it is safe.
+Variables disappear when a program ends. To keep information, a program writes it to a file, and to use it later, it reads the file back. Python makes this short, but a few details decide whether it is safe, and this article walks you through them.
 
 ## File I/O {#file-io}
 File I/O means reading data from a file on disk, or writing data to one. The letters stand for input and output. Reading brings the file's content into the program, and writing puts the program's data into the file.
 
 ## open() {#open}
-`open()` opens a file and returns a file object. The first argument is the file's path. The second is the mode: `"r"` for reading, which is the default, `"w"` for writing, which erases any existing content first, and `"a"` for appending, which adds to the end. Add an encoding for text, such as `encoding="utf-8"`, to avoid surprises with non-English letters.
+Every file operation starts with `open()`. It opens a file and gives you a file object. The first argument is the file's path. The second is the mode: `"r"` for reading, which is the default, `"w"` for writing, which erases any existing content first, and `"a"` for appending, which adds to the end. For text, also give an encoding such as `encoding="utf-8"`, to avoid surprises with non-English letters.
 
 ## read() {#read}
-`read()` returns the whole content of the file as one string. For a very large file, that is a lot of memory.
+`read()` gives you the whole content of the file as one string. For a very large file, that takes a lot of memory.
 
 ## readlines() {#readlines}
-`readlines()` returns the lines of the file as a list of strings. Each line keeps its newline character at the end.
+`readlines()` gives you the lines of the file as a list of strings. Each line keeps its newline character at the end.
 
 ## close() {#close}
-`close()` closes the file so that its resources are released and any pending writes are saved to disk. A file that stays open can lock the file for other programs, and may lose data if the program stops unexpectedly.
+`close()` closes the file, which releases its resources and saves any pending writes to disk. A file that stays open can lock it for other programs, and you may lose data if the program stops unexpectedly.
 
 ## The with statement {#with}
-The `with` statement opens a file and closes it for you when the block ends, even if an error happens inside. It is the recommended way, since you cannot forget to close.
+Remembering to close is easy to forget, so Python has a safer form. The `with` statement opens a file and closes it for you when the block ends, even if an error happens inside. It is the recommended way, because you cannot forget to close.
 
 ## A worked example {#example}
-Write three lines, then read them back. The file is created in a temporary folder so that nothing is left behind.
+Let's write three lines and then read them back. The file is created in a temporary folder, so nothing is left behind.
 
 ```text
 import os
@@ -55,7 +55,7 @@ lines = ["first\n", "second\n", "third\n"]
 print([line.strip() for line in lines])  # ['first', 'second', 'third']
 ```
 
-Looping directly over the file is the memory-friendly way for large files:
+Looping directly over the file is the memory-friendly way to handle large files:
 
 ```text
 import os
@@ -74,7 +74,7 @@ with open(path, encoding="utf-8") as f:
 
 Only one line is held in memory at a time. A 2 GB log file can be read this way on a small computer, while `read()` would need 2 GB of memory.
 
-Appending versus writing:
+Now appending against writing:
 
 ```text
 import os
@@ -89,9 +89,9 @@ with open(path, encoding="utf-8") as f:
     print(f.read().count("\n"))  # 2
 ```
 
-Mode `"a"` added a second line. Had the second `open` used `"w"`, the file would have lost "one" and contained 1 line. This is a common way to destroy data.
+Mode `"a"` added a second line. Had the second `open` used `"w"`, the file would have lost "one" and held 1 line. This is a common way to destroy data.
 
-The manual close, for comparison:
+For comparison, here is the manual close:
 
 ```text
 import os
@@ -113,7 +113,9 @@ If an error happened between `open` and `close`, the file would stay open. With 
 | `"a"` | No | Yes | Adds to the end |
 
 ## A common mistake {#mistake}
-Opening with `"w"` when you meant to add, which erases the old content. Another is forgetting to close a file written without `with`, so the last data never reaches the disk. And using `read()` on a huge file.
+A common slip is opening with `"w"` when you meant to add, which erases the old content.
+
+A second slip is forgetting to close a file that you opened without `with`, so the last data never reaches the disk. A third is calling `read()` on a huge file.
 
 ## Key points {#key-points}
 - Use `with open(...) as f:` so the file closes by itself.
