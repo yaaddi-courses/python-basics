@@ -98,7 +98,7 @@ print('  hi  '`.strip()`)
 `nums = [1, 2, 3]`
 `nums.pop()`
 `print(nums)`
-```","`[1, 2]`|`[2, 3]`|`[1, 2, 3]`|`3`",0,cards/card_39.png,,`pop()` with no argument removes and returns the last item.
+```","`[1, 2]`|`[2, 3]`|`[1, 2, 3]`|`3`",0,,,`pop()` with no argument removes and returns the last item.
 40,6,multiple_choice,exercise,36,"What does this print?
 ```python
 `nums = [1, 2, 3, 4]`
@@ -148,7 +148,7 @@ print(`d.get('b', 0)`)
 `d = {'a': 1, 'b': 2}`
 print(list(`d.keys()`))
 ```","`['a', 'b']`|`[1, 2]`|`('a', 'b')`|`{'a', 'b'}`",0,,,"`keys()` gives you every key in the dictionary, in insertion order."
-55,8,true_false,exercise,50,A list cannot be used as a dict key.,,true,cards/card_55.png,,"Lists are mutable, and mutable objects can't be hashed — tuples work fine as keys since they're immutable."
+55,8,true_false,exercise,50,A list cannot be used as a dict key.,,true,,,"Lists are mutable, and mutable objects can't be hashed — tuples work fine as keys since they're immutable."
 56,8,multiple_choice,exercise,50,"Dictionary items: what does this print?
 ```python
 `d = {'a': 1, 'b': 2}`
@@ -170,7 +170,7 @@ print([x for x in range(5) if x % 2 == 0])
 ```python
 `print({x for x in [1, 1, 2, 2, 3]})`
 ```","`{1, 2, 3}`|`{1, 1, 2, 2, 3}`|`[1, 2, 3]`|`3`",0,,,"A set comprehension drops duplicates automatically, same as a regular set."
-63,9,multi_select,exercise,57,Which of these are valid comprehension types in Python?,list comprehension|dict comprehension|set comprehension|tuple comprehension,0|1|2,cards/card_63.png,,There's no tuple comprehension — parentheses around a comprehension actually create a generator instead.
+63,9,multi_select,exercise,57,Which of these are valid comprehension types in Python?,list comprehension|dict comprehension|set comprehension|tuple comprehension,0|1|2,,,There's no tuple comprehension — parentheses around a comprehension actually create a generator instead.
 64,10,code_fill,main,,Complete the function definition for a function named greet.,"___ greet(name):
     return f'Hello, {name}'|def",,,,"`def` starts every function definition, followed by the name and its parameters. A parameter can have a default value, used automatically when the caller omits that argument. Arguments can be passed by position or by keyword (`name=value`); once you switch to keyword arguments in a call, everything after must also be keyword-based."
 65,10,multiple_choice,exercise,64,"What does this print?
@@ -218,7 +218,7 @@ print(`square(4)`)
     return `min(n)`, `max(n)`
 
 print(`minmax([3, 1, 2])`)
-```","`(1, 3)`|`(3, 1)`|`[1, 3]`|`1, 3`",0,cards/card_76.png,,Returning two values separated by a comma automatically packs them into a tuple.
+```","`(1, 3)`|`(3, 1)`|`[1, 3]`|`1, 3`",0,,,Returning two values separated by a comma automatically packs them into a tuple.
 77,12,multiple_choice,main,,"Name the scope order: Local, Enclosing, Global, Built-in.",LEGB|GEBL|BLEG|LGEB,0,,,"Python checks each scope in that exact order until it finds the name — Local first, Built-in last. Assigning to a name inside a function makes it local by default; writing global x first tells Python that x refers to the outer, module-level variable instead. The LEGB rule is Local, Enclosing, Global, Built-in."
 78,12,multiple_choice,exercise,77,"What does this print?
 ```python
@@ -230,7 +230,7 @@ print(`minmax([3, 1, 2])`)
 
 `f()`
 `print(x)`
-```","2,1|2,2|1,1|1,2",0,cards/card_78.png,,The x inside `f()` is a separate local variable — it doesn't affect the global x at all.
+```","2,1|2,2|1,1|1,2",0,,,The x inside `f()` is a separate local variable — it doesn't affect the global x at all.
 79,12,true_false,exercise,77,A variable set inside a function is local by default.,,true,,,"Assigning to a name inside a function makes Python treat it as local, unless you say otherwise with global."
 80,12,select_blank,exercise,77,`___ x` inside f edits the global `x`.,global|nonlocal|import|static,0,,,"global tells Python that x inside this function refers to the module-level variable, not a new local one."
 81,12,multiple_choice,exercise,77,"What does this print?
@@ -275,7 +275,7 @@ print(`float('3.5')` + 1)
     `print('caught')`
 ```",caught|Error|0|None,0,,,"Dividing by zero raises a ZeroDivisionError, which the `except` block catches."
 99,15,true_false,exercise,97,"finally always runs, error or not.",,true,,,finally is the right place for cleanup code that absolutely must run no matter what happened.
-100,15,select_blank,exercise,97,___ `ValueError('bad input')` raises a new exception.,raise|throw|except|error,0,cards/card_100.png,,"raise triggers an exception yourself, the same way a built-in error would be triggered."
+100,15,select_blank,exercise,97,___ `ValueError('bad input')` raises a new exception.,raise|throw|except|error,0,,,"raise triggers an exception yourself, the same way a built-in error would be triggered."
 101,15,multiple_choice,exercise,97,"What does this print?
 ```python
 `try:`
@@ -285,10 +285,10 @@ print(`float('3.5')` + 1)
 `else:`
     `print('b')`
 ```","b|a|a,b|Nothing",0,,,"No exception was raised, so the `else` block runs — else only fires when the `try` block succeeds cleanly."
-102,15,true_false,exercise,97,You can catch one exception type only.,,false,cards/card_102.png,,"False — a single except can catch several types at once with a tuple: except (TypeError, ValueError):. Naming exact types (rather than a bare except:) is still what keeps unrelated errors propagating instead of being silently caught."
+102,15,true_false,exercise,97,You can catch one exception type only.,,false,,,"False — a single except can catch several types at once with a tuple: except (TypeError, ValueError):. Naming exact types (rather than a bare except:) is still what keeps unrelated errors propagating instead of being silently caught."
 103,15,multiple_choice,exercise,97,Which block runs only if try raised nothing?,except|else|finally|raise,1,,,else runs exactly when nothing went wrong in the `try` block.
 104,16,select_blank,main,,___ `open('data.txt')` as f: safely opens a file.,with|using|open|try,0,,,"with automatically closes the file for you when the block ends, even if an error happens inside it. The mode you pass to `open()` matters: 'w' erases existing content, 'a' appends to it. `read()` pulls in the whole file as one string, while `readlines()` splits it into a list of lines. It involves using functions like `open()` to read or write data to files."
-105,16,multiple_choice,exercise,104,"Which mode opens a file, erasing old content?",`'w'`|`'r'`|`'a'`|`'x'`,0,cards/card_105.png,,'w' mode starts the file empty — any existing content is erased. Use 'a' if you want to keep it.
+105,16,multiple_choice,exercise,104,"Which mode opens a file, erasing old content?",`'w'`|`'r'`|`'a'`|`'x'`,0,,,'w' mode starts the file empty — any existing content is erased. Use 'a' if you want to keep it.
 106,16,multiple_choice,exercise,104,Which mode appends to a file's end?,`'a'`|`'w'`|`'r'`|`'+'`,0,,,"'a' mode writes new content after whatever's already in the file, without erasing it."
 107,16,true_false,exercise,104,with closes a file even if an error occurs.,,true,,,This is the main reason to prefer with over a plain `open()`/`close()` pair.
 108,16,select_blank,exercise,104,f.___() reads the whole file as one string.,`read`|`readline`|`readlines`|`load`,0,,,`read()` pulls in the entire file's contents as a single string.
@@ -339,7 +339,7 @@ a.count = 5
 124,19,short_answer,exercise,123,Which function calls a parent class's method?,super()|super,,,,"`super()` gives you access to the parent class's version of a method, even after you've overridden it."
 125,19,true_false,exercise,123,A subclass instance uses its own override.,,true,,,"Dog overrides `speak()`, so calling it on a Dog instance uses Dog's version, not Animal's."
 126,19,true_false,exercise,123,Overriding means a subclass redefines a parent method.,,true,,,The subclass's version replaces the parent's when called on an instance of the subclass.
-127,19,true_false,exercise,123,`super()` calls the parent's version of a method.,,true,cards/card_127.png,,"`super().speak()` calls Animal's original version first, then Dog's override adds ' -> Woof' to it."
+127,19,true_false,exercise,123,`super()` calls the parent's version of a method.,,true,,,"`super().speak()` calls Animal's original version first, then Dog's override adds ' -> Woof' to it."
 128,19,true_false,exercise,123,Polymorphism lets classes answer one call differently.,,true,,,"Calling `.speak()` works the same way regardless of the exact class, but each class can answer differently."
 129,20,multiple_choice,main,,Which prefix marks an attribute as non-public by convention?,_name|$name|ALL_CAPS|name_,0,,,"A single leading underscore is a hint to other developers: ""treat this as internal,"" nothing more — nothing stops code outside the class from actually accessing it. A double leading underscore goes a step further, triggering name mangling that makes the attribute harder to reach by accident. Encapsulation keeps an object's data behind its methods."
 130,20,true_false,exercise,129,"A single underscore is convention, not enforced privacy.",,true,,,"Nothing stops code outside the class from accessing a _underscored attribute — it's a social contract, not a lock."
@@ -369,7 +369,7 @@ print(list(`filter(lambda x: x > 1, [1, 2, 3])`))
 138,21,multiple_choice,exercise,135,"What does this print?
 ```python
 print(list(`zip([1, 2], ['a', 'b'])`))
-```","`[(1, 'a'), (2, 'b')]`|`[(1, 2), ('a', 'b')]`|`[1, 2, 'a', 'b']`|`{(1, 'a'), (2, 'b')}`",0,cards/card_138.png,,`zip()` pairs up items from each iterable by position.
+```","`[(1, 'a'), (2, 'b')]`|`[(1, 2), ('a', 'b')]`|`[1, 2, 'a', 'b']`|`{(1, 'a'), (2, 'b')}`",0,,,`zip()` pairs up items from each iterable by position.
 139,21,multiple_choice,exercise,135,"What does this print?
 ```python
 `for i, v in enumerate(['a', 'b']):`
@@ -440,31 +440,31 @@ print(`sorted(w, key=len)`)
 185,1,true_false,preview,1,`print`('hi') shows text on the screen.,,true,,,True. `print` sends the text you give it to the screen.
 186,2,true_false,preview,8,The `//` operator floor-divides in Python.,,true,,,"True. `//` divides and rounds down to the nearest whole number, so `7 // 2` is `3`."
 187,3,true_false,preview,15,"F'Hello, {name}!' is how f-strings embed a variable.",,true,,,True. An `f` before the quotes lets you put a variable inside `{}` and have its value inserted.
-188,4,true_false,preview,22,A conditional chain always starts with if.,,true,cards/card_188.png,,True. A conditional chain begins with `if`; `elif` and `else` can only follow it.
+188,4,true_false,preview,22,A conditional chain always starts with if.,,true,,,True. A conditional chain begins with `if`; `elif` and `else` can only follow it.
 189,5,true_false,preview,29,For i in `range`(5): counts 0 through 4.,,true,,,"True. `range(5)` produces 0, 1, 2, 3, 4 and stops before 5, so the loop runs five times."
 190,6,true_false,preview,36,A list is mutable — you can change it.,,true,,,"True. Lists are mutable: you can add, remove or replace items after creating them."
 191,7,true_false,preview,43,A tuple is immutable — its contents can't change.,,true,,,True. A tuple cannot be changed after it is created; trying to assign to an item raises an error.
-192,8,true_false,preview,50,`Person = {'name': 'Ada'}` is a dict with key 'name'.,,true,cards/card_192.png,,True. Curly braces with `key: value` pairs make a dict; here `'name'` is the key and `'Ada'` its value.
-193,9,true_false,preview,57,`squares=[n ** 2 for n in nums]` is a comprehension.,,true,cards/card_193.png,,"True. A list comprehension builds a new list from an expression, here each `n ** 2` for `n` in `nums`."
-194,10,true_false,preview,64,`def greet(name):` defines the function greet.,,true,cards/card_194.png,,"True. `def` starts a function definition, and `greet` is the name you call it by."
-195,11,true_false,preview,71,`def total(*args):` gathers extra positional args.,,true,cards/card_195.png,,True. `*args` collects any extra positional arguments into a tuple inside the function.
-196,12,true_false,preview,77,Python searches scopes in LEGB order.,,true,cards/card_196.png,,"Python searches for names in the specific order of Local, then Enclosing (for nested functions), then Global, and finally Built-in scope."
-197,13,true_false,preview,84,From math import sqrt pulls sqrt from math.,,true,cards/card_197.png,,You must use `from` to specify that you are pulling a particular item (like `sqrt`) directly out of another module (`math`).
-198,14,true_false,preview,90,`input()` reads a line from the user.,,true,cards/card_198.png,,The built-in `input()` function is the standard way in Python to pause execution and read a line of text entered by the user from the console.
-199,15,true_false,preview,97,A `try` block always comes before except.,,true,cards/card_199.png,,This is true; the code that might fail must be placed inside the `try` block so that the `except` block can catch any resulting error.
-200,16,true_false,preview,104,`with open('data.txt') as f:` is the safe pattern.,,true,cards/card_200.png,,"You must use the `with` statement because it creates a context manager that guarantees the file is properly closed automatically, even if an error occurs."
-201,17,true_false,preview,111,Class Dog: defines the class Dog.,,true,cards/card_201.png,,"You must use the keyword `class` to tell Python that you are defining a new blueprint for an object, like Dog. The other keywords serve different purposes entirely."
-202,18,true_false,preview,117,Def `__init__`(`self`): is Python's constructor method.,,true,cards/card_202.png,,The `__init__` method is Python's constructor; it runs automatically right after an object is created and is used to set up its initial attributes.
-203,19,true_false,preview,123,`class Cat(Animal):` makes Cat inherit from Animal.,,true,cards/card_203.png,,"When you want to make a class inherit features from another, you list the parent class name inside the parentheses after your own class name."
-204,20,true_false,preview,129,A `_name` prefix marks a non-public attribute.,,true,cards/card_204.png,,"In Python, prefixing an attribute with a single underscore (like _name) is the convention used to signal that it should be treated as protected or non-public by other developers."
-205,21,true_false,preview,135,"List(`map`(f,nums)) runs a function on every item.",,true,cards/card_205.png,,The `map()` function applies the given function to every single item in an iterable and collects all the results into a new sequence.
+192,8,true_false,preview,50,`Person = {'name': 'Ada'}` is a dict with key 'name'.,,true,,,True. Curly braces with `key: value` pairs make a dict; here `'name'` is the key and `'Ada'` its value.
+193,9,true_false,preview,57,`squares=[n ** 2 for n in nums]` is a comprehension.,,true,,,"True. A list comprehension builds a new list from an expression, here each `n ** 2` for `n` in `nums`."
+194,10,true_false,preview,64,`def greet(name):` defines the function greet.,,true,,,"True. `def` starts a function definition, and `greet` is the name you call it by."
+195,11,true_false,preview,71,`def total(*args):` gathers extra positional args.,,true,,,True. `*args` collects any extra positional arguments into a tuple inside the function.
+196,12,true_false,preview,77,Python searches scopes in LEGB order.,,true,,,"Python searches for names in the specific order of Local, then Enclosing (for nested functions), then Global, and finally Built-in scope."
+197,13,true_false,preview,84,From math import sqrt pulls sqrt from math.,,true,,,You must use `from` to specify that you are pulling a particular item (like `sqrt`) directly out of another module (`math`).
+198,14,true_false,preview,90,`input()` reads a line from the user.,,true,,,The built-in `input()` function is the standard way in Python to pause execution and read a line of text entered by the user from the console.
+199,15,true_false,preview,97,A `try` block always comes before except.,,true,,,This is true; the code that might fail must be placed inside the `try` block so that the `except` block can catch any resulting error.
+200,16,true_false,preview,104,`with open('data.txt') as f:` is the safe pattern.,,true,,,"You must use the `with` statement because it creates a context manager that guarantees the file is properly closed automatically, even if an error occurs."
+201,17,true_false,preview,111,Class Dog: defines the class Dog.,,true,,,"You must use the keyword `class` to tell Python that you are defining a new blueprint for an object, like Dog. The other keywords serve different purposes entirely."
+202,18,true_false,preview,117,Def `__init__`(`self`): is Python's constructor method.,,true,,,The `__init__` method is Python's constructor; it runs automatically right after an object is created and is used to set up its initial attributes.
+203,19,true_false,preview,123,`class Cat(Animal):` makes Cat inherit from Animal.,,true,,,"When you want to make a class inherit features from another, you list the parent class name inside the parentheses after your own class name."
+204,20,true_false,preview,129,A `_name` prefix marks a non-public attribute.,,true,,,"In Python, prefixing an attribute with a single underscore (like _name) is the convention used to signal that it should be treated as protected or non-public by other developers."
+205,21,true_false,preview,135,"List(`map`(f,nums)) runs a function on every item.",,true,,,The `map()` function applies the given function to every single item in an iterable and collects all the results into a new sequence.
 206,22,true_false,preview,142,`sorted()` copies; `list.sort()` sorts in place.,,true,,,True. `sorted()` returns a new sorted list and leaves the original alone; `list.sort()` reorders the list itself.
-207,23,true_false,preview,149,`python -m venv myenv` creates an isolated environment.,,true,cards/card_207.png,,"The module used to create virtual environments in Python is 'venv', so the command must be `python -m venv myenv`."
+207,23,true_false,preview,149,`python -m venv myenv` creates an isolated environment.,,true,,,"The module used to create virtual environments in Python is 'venv', so the command must be `python -m venv myenv`."
 208,24,true_false,preview,155,`def greet(age:int)->str:` shows the return type.,,true,,,"The arrow syntax (->) is used for type hinting to specify what a function is expected to return, so 'str' indicates the return type."
 209,7,true_false,exercise,43,You can change a tuple's item after creation.,,false,,,Tuples can't be modified after creation -- trying to reassign an item raises a TypeError.
 210,7,true_false,preview,46,Python's set type removes duplicate values automatically.,,true,,,"True. A set keeps each value only once, so adding a duplicate changes nothing."
 300,11,true_false,preview,72,`def show(**kwargs):` gathers extra keyword args.,,true,,,The double asterisk (**kwargs) is used to gather any extra keyword arguments passed to a function and collect them into a dictionary.
-301,20,true_false,preview,132,`@property` reads a method like an attribute.,,true,cards/card_301.png,,"The @property decorator allows you to access methods using dot notation, making them behave like simple attributes while still retaining method logic for controlled reading and writing."
+301,20,true_false,preview,132,`@property` reads a method like an attribute.,,true,,,"The @property decorator allows you to access methods using dot notation, making them behave like simple attributes while still retaining method logic for controlled reading and writing."
 302,23,true_false,preview,151,pip installs third-party Python packages.,,true,,,"Pip's primary function is managing and installing external libraries, which are known as third-party packages in the Python ecosystem."
 303,24,true_false,preview,158,Python's official style guide is named PEP 8.,,true,,,PEP 8 is the widely accepted standard style guide that dictates how Python code should be formatted and written.
 304,11,multiple_choice,exercise,72,"What does this print?

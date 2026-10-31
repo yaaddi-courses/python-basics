@@ -1,0 +1,32 @@
+section,deck,pack,level,keywords,terms,kind,main_card_id
+Foundations & Control Flow,"Environment, Variables & Primitive Data Types",What function prints text to the console in Python?,1,Variable|Function|Class,Variable|Function|Class,teach,1
+Foundations & Control Flow,Operators & Expressions,Which operator performs floor (integer) division in Python?,1,Modulo|Exponentiation|Boolean,Modulo|Exponentiation|Boolean,teach,8
+Foundations & Control Flow,String Manipulation,"f'Hello, ___!' embeds the name variable in an f-string.",1,String|F-string|Indexing|List,String|F-string|Indexing|List,teach,15
+Foundations & Control Flow,Conditional Logic,Order if/elif/else as they appear.,1,Truthy|Falsy|Ternary expression|None,Truthy|Falsy|Ternary expression|None,teach,22
+Foundations & Control Flow,Loops & Iteration,for i in ___(5): loops from 0 through 4.,1,Iteration,Iteration,teach,29
+Core Data Structures,Lists,Lists are ___ — you can change them.,1,Slicing|Mutable|Immutable|Tuple,Slicing|Mutable|Immutable|Tuple,teach,36
+Core Data Structures,Tuples & Sets,Tuples are ___ — their contents can't change.,1,Unpacking|TypeError,Unpacking|TypeError,teach,43
+Core Data Structures,Tuples & Sets,A Python ___ automatically removes duplicate values.,1,Set,Set,teach,46
+Core Data Structures,Dictionaries,person={'name':___} maps the key 'name' to 'Ada'.,2,Dictionary|Hashable|KeyError,Dictionary|Hashable|KeyError,teach,50
+Core Data Structures,Comprehensions,squares=[n ___ for n in nums] squares each number.,2,Iterable|List comprehension|Generator|Optional,Iterable|List comprehension|Generator|Optional,teach,57
+Functions & Code Organization,Function Essentials,Complete the function definition for a function named greet.,2,Complete the function definition for a function named greet.,,teach,64
+Functions & Code Organization,Advanced Function Arguments & Lambdas,def total(___args): collects extra positional arguments.,2,Positional argument,Positional argument,teach,71
+Functions & Code Organization,Advanced Function Arguments & Lambdas,def show(___kwargs): collects extra keyword arguments.,2,Lambda,Lambda,teach,72
+Functions & Code Organization,Variable Scope,"Name the scope order: Local, Enclosing, Global, Built-in.",2,Scope|LEGB rule|Module,Scope|LEGB rule|Module,teach,77
+Functions & Code Organization,Modules & Packages,___ math import sqrt imports just sqrt from math.,2,___ math import sqrt imports just sqrt from math.,,teach,84
+Input/Output & Error Handling,User Input & Basic Type Conversion,Which function reads a typed line from the user?,2,Type conversion|ValueError|IndexError,Type conversion|ValueError|IndexError,teach,90
+Input/Output & Error Handling,Exception Handling,"Order try, except, else, finally.",3,Exception|ZeroDivisionError,Exception|ZeroDivisionError,teach,97
+Input/Output & Error Handling,File I/O Basics,___ open('data.txt') as f: safely opens a file.,3,File I/O,File I/O,teach,104
+Object-Oriented Programming (OOP) Essentials,Classes & Objects,Complete the class definition for a class named Dog.,3,Instance|Method|Self,Instance|Method|Self,teach,111
+Object-Oriented Programming (OOP) Essentials,Constructors & Instance vs. Class State,"Name Python's constructor, run when an instance is made.",3,Attribute|Constructor,Attribute|Constructor,teach,117
+Object-Oriented Programming (OOP) Essentials,Inheritance & Polymorphism,class Cat(___): makes Cat inherit from Animal.,3,Inheritance|Overriding|Polymorphism,Inheritance|Overriding|Polymorphism,teach,123
+Object-Oriented Programming (OOP) Essentials,Encapsulation & Pythonic Access Control,Which prefix marks an attribute as non-public by convention?,3,Encapsulation|Name mangling,Encapsulation|Name mangling,teach,129
+Object-Oriented Programming (OOP) Essentials,Encapsulation & Pythonic Access Control,Which decorator makes a method act like an attribute?,3,Decorator,Decorator,teach,132
+Functional & Built-in Utilities,High-Order Built-in Functions,"list(___(f,nums)) applies a function to every item.",3,Higher-order function,Higher-order function,teach,135
+Functional & Built-in Utilities,Sorting & Custom Keys,___() copies; list.sort() sorts in place.,4,Sort key,Sort key,teach,142
+Modern Fundamentals & Code Quality,Virtual Environments & Package Management,Which built-in Python module creates an isolated virtual env,4,Virtual environment,Virtual environment,teach,149
+Modern Fundamentals & Code Quality,Virtual Environments & Package Management,Which command-line tool is used to install Python packages?,4,pip|requirements.txt,pip|requirements.txt,teach,151
+Modern Fundamentals & Code Quality,Type Hints & Code Style,def greet(age:int)->___: means greet returns a string.,4,Type hint,Type hint,teach,155
+Modern Fundamentals & Code Quality,Type Hints & Code Style,Python's official style guide is called ___.,4,Docstring|PEP 8,Docstring|PEP 8,teach,158
+Review,Recap: Key Terms,Recap pack 30,4,Modulo|Exponentiation|F-string|Indexing|Falsy|Ternary expression|Slicing|Unpacking|Hashable|List comprehension|Generator|Positional argument|Scope|LEGB rule|Type conversion|IndexError,,review,317
+Review,Recap: Key Terms,Recap pack 31,4,ZeroDivisionError|File I/O|Constructor|Inheritance|Overriding|Polymorphism|Encapsulation|Name mangling|Decorator|Higher-order function|Sort key|Virtual environment|requirements.txt|Type hint|Docstring|PEP 8,,review,322
